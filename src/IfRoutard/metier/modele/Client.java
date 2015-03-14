@@ -88,9 +88,7 @@ public class Client {
 
     @Override
     public String toString() {
-        return "Civilite : " + civilite + " -- "+ 
-               "Nom : " + nom + " -- "+ 
-               "Prenom : " + prenom + " -- " +
-               "Mail : " + mail + "" ;
+        return prenom +" "+ nom +"\n"
+                +numeroTelephone;
     }
 }

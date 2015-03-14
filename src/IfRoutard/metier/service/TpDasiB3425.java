@@ -25,15 +25,9 @@ public class TpDasiB3425 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        /*String nom = Saisie.lireChaine("Entrez un nom de client");
-        String prenom = Saisie.lireChaine("Entrez un prenom de client"); */
-        
-       // Client cl = new Client(nom, prenom);
-        /*JpaUtil.creerEntityManager();
-        JpaUtil.ouvrirTransaction();
-        JpaUtil.obtenirEntityManager().persist(cl);
-        JpaUtil.validerTransaction();
-        JpaUtil.fermerEntityManager(); */
+        /*String nom = Saisie.lireChaine("Entrez un nom de client :");
+        String prenom = Saisie.lireChaine("Entrez un prenom de client : "); */
+    
         
         JpaUtil.creerEntityManager();
         ClientDAO cDao = new ClientDAO();     

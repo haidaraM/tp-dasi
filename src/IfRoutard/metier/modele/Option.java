@@ -11,6 +11,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Temporal;
 
 /**
  *
@@ -26,6 +27,7 @@ public class Option {
     private String lieuDepart;
     
     @Column(nullable = false)
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date dateDepart;
     
     @Column(nullable = false)
@@ -38,6 +40,9 @@ public class Option {
         this.dateDepart = dateDepart;
         this.tarif = tarif;
         this.typeTransport = typeTransport;
+    }
+
+    public Option() {
     }
 
     public long getId() {

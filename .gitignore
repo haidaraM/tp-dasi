@@ -13,5 +13,5 @@ hs_err_pid*
 /build/
 
 # others files
-nbproject/private/private.properties
+nbproject/private/
 
