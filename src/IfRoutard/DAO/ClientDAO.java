@@ -56,7 +56,7 @@ public class ClientDAO extends DAO<Client> {
     
     @Override
     public void update(Client updatedClient) {
-               
+             
         if(em.find(Client.class, updatedClient.getId()) == null)
         {
             throw new IllegalArgumentException("Unknown Client");

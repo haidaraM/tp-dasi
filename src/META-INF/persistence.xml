@@ -6,6 +6,8 @@
     <class>IfRoutard.metier.modele.Sejour</class>
     <class>IfRoutard.metier.modele.Voyage</class>
     <class>IfRoutard.metier.modele.Circuit</class>
+    <class>IfRoutard.metier.modele.Conseiller</class>
+    <class>IfRoutard.metier.modele.Option</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/IfRoutard"/>
       <property name="javax.persistence.jdbc.password" value="b3425"/>

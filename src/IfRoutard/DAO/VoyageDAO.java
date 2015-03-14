@@ -43,7 +43,7 @@ public class VoyageDAO extends DAO<Voyage> {
     public void update(Voyage updatedVoyage) {
         if(em.find(Voyage.class, updatedVoyage.getId()) == null)
         {
-            throw new IllegalArgumentException("Unknown Client");
+            throw new IllegalArgumentException("Unknown Voyage");
         }
         JpaUtil.ouvrirTransaction();
         em.merge(updatedVoyage);

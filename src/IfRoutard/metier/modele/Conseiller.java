@@ -29,15 +29,21 @@ public class Conseiller {
     }
 
     public int getId() {
-        return this.id;
+        return id;
     }
 
     public String getNom() {
-        return this.nom;
+        return nom;
+    }
+    
+    
+    public String getPrenom() {
+        return prenom;
+    }
+    public String getMail() {
+        return mail;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
+     
 
 }
