@@ -1,4 +1,4 @@
-package b3425;
+package IfRoutard.metier.modele;
 
 import java.io.BufferedReader;
 import java.io.IOException;

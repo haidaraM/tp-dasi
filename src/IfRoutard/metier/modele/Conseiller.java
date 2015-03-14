@@ -1,4 +1,4 @@
-package b3425;
+package IfRoutard.metier.modele;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,7 +11,6 @@ import javax.persistence.Id;
  */
 @Entity
 public class Conseiller {
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;

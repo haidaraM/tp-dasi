@@ -3,11 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package b3425.DAO;
+package IfRoutard.DAO;
+
+import java.util.List;
 
 /**
  *
  * @author ebai
+ * @param <T>
  */
 public abstract class DAO<T> {
    
@@ -16,7 +19,13 @@ public abstract class DAO<T> {
 	 * @param id
 	 * @return
 	 */
-	public abstract T find(int id);
+	public abstract T find(long id);
+        
+        /**
+         * Permet de récuperer tous les objets
+         * @return
+         */
+        public abstract List<T> find();
 	
 	/**
 	 * Permet de créer une entrée dans la base de données
@@ -28,8 +37,10 @@ public abstract class DAO<T> {
 	/**
 	 * Permet de mettre à jour les données d'une entrée dans la base 
 	 * @param obj
+         * @return 
 	 */
-	public abstract boolean update(T obj);
+	public abstract void update(T obj);
+        
 	
 	/**
 	 * Permet la suppression d'une entrée de la base
