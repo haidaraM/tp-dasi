@@ -32,7 +32,7 @@ public class Client {
         this.prenom = Prenom;
     }
 
-    public int getID() {
+    public int getId() {
         return id;
     }
     

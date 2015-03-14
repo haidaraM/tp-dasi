@@ -45,7 +45,7 @@ public class TpDasiB3425 {
         
         JpaUtil.creerEntityManager();
         ClientDAO cDao = new ClientDAO();
-        Client cl = new Client("Mession", "Ronaldo");
+        Client cl = new Client("Messi", "Ronaldo");
         cDao.create(cl);
         JpaUtil.fermerEntityManager();
     }
