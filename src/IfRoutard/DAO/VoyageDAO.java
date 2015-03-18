@@ -53,6 +53,7 @@ public class VoyageDAO extends DAO<Voyage> {
 
     @Override
     public void delete(Voyage obj) {
+        //TODO : faire la suppression d'un voyage
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

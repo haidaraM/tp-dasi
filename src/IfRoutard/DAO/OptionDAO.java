@@ -15,7 +15,7 @@ import javax.persistence.Query;
  *
  * @author elmhaidara
  */
-public class OptioDAO extends DAO<Option> {
+public class OptionDAO extends DAO<Option> {
      private final String TABLE_NAME = "Option";
     private EntityManager em = JpaUtil.obtenirEntityManager();
 
