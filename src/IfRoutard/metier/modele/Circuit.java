@@ -5,6 +5,7 @@
  */
 package IfRoutard.metier.modele;
 
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
 /**
@@ -12,14 +13,15 @@ import javax.persistence.Entity;
  * @author elmhaidara
  */
 @Entity
+@DiscriminatorValue("Circuit")
 public class Circuit extends Voyage{
     private String transport;
-    private int distance;
+    private int kilometrage;
 
-    public Circuit(String nom, int duree, String description, String transport, int distance) {
-        super(nom, duree, description);
+    public Circuit(String nom, int duree, String description,String code, String transport, int distance) {
+        super(nom, duree, description, code);
         this.transport = transport;
-        this.distance = distance;
+        this.kilometrage = distance;
     }
 
     public Circuit() {
@@ -34,24 +36,21 @@ public class Circuit extends Voyage{
         this.transport = transport;
     }
 
-    public int getDistance() {
-        return distance;
+    public int getKilometrage() {
+        return kilometrage;
     }
 
-    public void setDistance(int distance) {
-        this.distance = distance;
+    public void setKilometrage(int distance) {
+        this.kilometrage = distance;
     }
 
     @Override
     public String toString() {
         return super.toString() +
                 "Moyen de transport: "+ transport +" -- "+
-                "Distance : " + distance +" -- ";
+                "Distance : " + kilometrage +" -- ";
                 
     }
     
-    
-    
-    
-    
+       
 }

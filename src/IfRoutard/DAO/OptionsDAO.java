@@ -5,7 +5,7 @@
  */
 package IfRoutard.DAO;
 
-import IfRoutard.metier.modele.Option;
+import IfRoutard.metier.modele.Options;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -15,13 +15,13 @@ import javax.persistence.Query;
  *
  * @author elmhaidara
  */
-public class OptionDAO extends DAO<Option> {
+public class OptionsDAO extends DAO<Options> {
      private final String TABLE_NAME = "Option";
     private EntityManager em = JpaUtil.obtenirEntityManager();
 
     @Override
-    public Option find(long id) {
-        Option op = em.find(Option.class, id);
+    public Options find(long id) {
+        Options op = em.find(Options.class, id);
        if(op != null){
            // on coupe le lien avec la base de donnée
            em.detach(op);
@@ -30,23 +30,23 @@ public class OptionDAO extends DAO<Option> {
     }
 
     @Override
-    public List<Option> find() {
-        List<Option> maListe = new ArrayList<Option>();
+    public List<Options> find() {
+        List<Options> maListe = new ArrayList<Options>();
         Query q = em.createQuery("Select o FROM "+TABLE_NAME +" o"  );
-        maListe = (List<Option>) q.getResultList();
+        maListe = (List<Options>) q.getResultList();
         return maListe;
     }
 
     @Override
-    public void create(Option obj) {
+    public void create(Options obj) {
         JpaUtil.ouvrirTransaction();
         em.persist(obj); 
         JpaUtil.validerTransaction();
     }
 
     @Override
-    public void update(Option updatedOption) {
-        if(em.find(Option.class, updatedOption.getId()) == null)
+    public void update(Options updatedOption) {
+        if(em.find(Options.class, updatedOption.getId()) == null)
         {
             throw new IllegalArgumentException("Unknown option");
         }
@@ -56,7 +56,7 @@ public class OptionDAO extends DAO<Option> {
     }
 
     @Override
-    public void delete(Option obj) {
+    public void delete(Options obj) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

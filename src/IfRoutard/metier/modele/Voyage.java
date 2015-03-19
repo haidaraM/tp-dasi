@@ -5,33 +5,74 @@
  */
 package IfRoutard.metier.modele;
 
+import java.util.ArrayList;
+import java.util.List;
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.DiscriminatorType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 
 /**
  *
  * @author ebai
  */
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED)
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "DTYPE", discriminatorType = DiscriminatorType.STRING)
 public abstract class Voyage {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
+    
     private String nom;
+    
     private int duree;
+    
     private String description;
+    
+    private String code;
 
-    public Voyage( String nom, int duree, String description) {
+    @ManyToMany
+    private List<Pays> pays = new ArrayList();
+    
+    @OneToMany
+    private List<Options> options = new ArrayList();
+    
+    @ManyToMany(mappedBy = "voyages")
+    private List<Client> clients = new ArrayList();
+    
+    
+    public Voyage(String nom, int duree, String description, String code) {
         this.nom = nom;
         this.duree = duree;
         this.description = description;
+        this.code = code;
     }
 
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public List<Pays> getPays() {
+        return pays;
+    }
+
+    public List<Options> getOptions() {
+        return options;
+    }
+    
+    
+    
     public Voyage() {
     }
 

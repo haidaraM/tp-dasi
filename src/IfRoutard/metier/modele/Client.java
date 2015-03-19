@@ -1,5 +1,7 @@
 package IfRoutard.metier.modele;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.*;
 
 
@@ -34,6 +36,12 @@ public class Client {
     private String mail;
     
     private String numeroTelephone;
+    
+    @OneToMany(mappedBy = "client")
+    private List<Devis> devis = new ArrayList();
+    
+    @ManyToMany
+    private List<Voyage> voyages = new ArrayList();
     
     public Client() {
     } 

@@ -2,9 +2,11 @@ package IfRoutard.metier.service;
 
 import IfRoutard.DAO.ClientDAO;
 import IfRoutard.DAO.JpaUtil;
+import IfRoutard.DAO.PaysDAO;
 import IfRoutard.DAO.VoyageDAO;
 import IfRoutard.metier.modele.Circuit;
 import IfRoutard.metier.modele.Client;
+import IfRoutard.metier.modele.Pays;
 import IfRoutard.metier.modele.Sejour;
 import IfRoutard.metier.modele.Voyage;
 import java.util.List;
@@ -36,17 +38,12 @@ public class TpDasiB3425 {
             System.out.println(maliste1);
         } */
         VoyageDAO vDao = new VoyageDAO();
-        /*Sejour sej = new Sejour("Beau goss",454,"momo","Sofitel");
-        vDao.create(sej);
+        PaysDAO pDao = new PaysDAO();
         
-        Client cl = new Client("Haidara", "Mohamed", "M", "01010100", "mmmmmm");
-        cDao.create(cl);
-        
-        Circuit cir = new Circuit("Very bad trip a Tomboctou", 20, "Cool", "Quad", 10);
-        vDao.create(cir); */
         
         List<Voyage> maListeV = vDao.find();
         for (Voyage maListeV1 : maListeV) {
+            
             System.out.println(maListeV1);
         }
         

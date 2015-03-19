@@ -5,6 +5,7 @@
  */
 package IfRoutard.metier.modele;
 
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
 /**
@@ -12,12 +13,13 @@ import javax.persistence.Entity;
  * @author mhaidara
  */
 @Entity
+@DiscriminatorValue("Sejour")
 public class Sejour extends Voyage{
     
     private String residence;
 
-    public Sejour(String nom, int duree, String description, String res) {
-        super(nom, duree, description);
+    public Sejour(String nom, int duree, String description, String code, String res) {
+        super(nom, duree, description, code);
         this.residence = res;
     }
 

@@ -7,16 +7,17 @@
     <class>IfRoutard.metier.modele.Voyage</class>
     <class>IfRoutard.metier.modele.Circuit</class>
     <class>IfRoutard.metier.modele.Conseiller</class>
-    <class>IfRoutard.metier.modele.Option</class>
     <class>IfRoutard.metier.modele.Pays</class>
+    <class>IfRoutard.metier.modele.Options</class>
+    <class>IfRoutard.metier.modele.Devis</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/IfRoutard"/>
       <property name="javax.persistence.jdbc.password" value="b3425"/>
       <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
       <property name="javax.persistence.jdbc.user" value="ebai"/>
       <property name="eclipselink.ddl-generation.output-mode" value="both"/>
-      <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
       <!--<property name="eclipselink.ddl-generation" value="create-tables"/> -->
+      <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
     </properties>
   </persistence-unit>
 </persistence>

@@ -18,7 +18,7 @@ import javax.persistence.Temporal;
  * @author elmhaidara
  */
 @Entity
-public class Option {
+public class Options {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
@@ -35,14 +35,14 @@ public class Option {
     
     private String typeTransport;
 
-    public Option(String lieuDepart, Date dateDepart, int tarif, String typeTransport) {
+    public Options(String lieuDepart, Date dateDepart, int tarif, String typeTransport) {
         this.lieuDepart = lieuDepart;
         this.dateDepart = dateDepart;
         this.tarif = tarif;
         this.typeTransport = typeTransport;
     }
 
-    public Option() {
+    public Options() {
     }
 
     public long getId() {
