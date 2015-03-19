@@ -46,7 +46,7 @@ public class OptionDAO extends DAO<Option> {
 
     @Override
     public void update(Option updatedOption) {
-         if(em.find(Option.class, updatedOption.getId()) == null)
+        if(em.find(Option.class, updatedOption.getId()) == null)
         {
             throw new IllegalArgumentException("Unknown option");
         }

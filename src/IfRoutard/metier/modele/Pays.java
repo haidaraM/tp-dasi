@@ -49,9 +49,7 @@ public class Pays {
     
     public long getId() {
         return id;
-    }
-
-    
+    }   
     
     public String getNom() {
         return nom;
@@ -108,6 +106,16 @@ public class Pays {
     public void setLangue(String langue) {
         this.langue = langue;
     }  
+
+    @Override
+    public String toString() {
+        return "Pays : " + nom +" -- "+
+                "Code : " + code + " -- " +
+                "Langue " + langue +" -- "+
+                "Superficie " + superficie;
+    }
+    
+    
     
     
 }

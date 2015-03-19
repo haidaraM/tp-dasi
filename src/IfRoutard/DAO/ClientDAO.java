@@ -67,9 +67,9 @@ public class ClientDAO extends DAO<Client> {
     }
 
     @Override
-    public void delete(Client obj) {
-        //TODO : faire la suppression d'un voyage
-        
+    public void delete(Client clientToDelete) {
+        //TODO : faire la suppression d'un client
+         
     }
 
     @Override
