@@ -107,9 +107,7 @@ public class Pays {
 
     public void setLangue(String langue) {
         this.langue = langue;
-    }
-    
-    
+    }  
     
     
 }
