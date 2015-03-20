@@ -55,15 +55,29 @@ public class TpDasiB3425 {
         pDao.create(p1);
         pDao.create(p2);
         
-        Sejour v1 = new Sejour("Nom1", 7, "Description", "MAC", "Hotel");
-        Sejour v2 = new Sejour("Nom2", 7, "Description", "FRA", "Hotel");
+        Sejour v1 = new Sejour("Zejour1", 10, "Description", "MAC", "Hotel");
+        Sejour v2 = new Sejour("Aejour2", 8, "Description", "FRA", "Hotel");
+        Circuit v3 = new Circuit("Circuit1", 9, "Description3", "FRA2", "Hotel", 12);
+        Circuit v4 = new Circuit("Circuit2", 5, "Description4", "MAC2", "Hotel", 12);
+        
         v1.addPays(p1);
         v2.addPays(p2);
+        v3.addPays(p2);
+        v4.addPays(p1);
+        
         vDao.create(v1);
         vDao.create(v2);
+        vDao.create(v3);
+        vDao.create(v4);
         
         maListeV.clear();
-        maListeV = vDao.findPays("Macedoine");
+        maListeV = vDao.find();
+        for (Voyage maListeV1 : maListeV) {
+            
+            System.out.println(maListeV1);
+        }
+        
+        maListeV = vDao.orderByDuree(false, maListeV);
         for (Voyage maListeV1 : maListeV) {
             
             System.out.println(maListeV1);

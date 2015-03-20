@@ -6,9 +6,10 @@
 package IfRoutard.DAO;
 
 
-import IfRoutard.metier.modele.Client;
 import IfRoutard.metier.modele.Voyage;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
@@ -19,7 +20,6 @@ import javax.persistence.Query;
  */
 public class VoyageDAO extends DAO<Voyage> {
 
-    private final String TABLE_NAME = "Voyage";
     private EntityManager em = JpaUtil.obtenirEntityManager();
     
     @Override
@@ -32,21 +32,71 @@ public class VoyageDAO extends DAO<Voyage> {
         return vo;
     }
     
-    /*public List<Voyage> find(String name){
-        List<Voyage> listVoyage = new ArrayList();
-        Query q = em.createQuery("Select v FROM "+TABLE_NAME +" v where nom like :nom_voyage" );
-        q.setParameter("nom_voyage", "%"+name+"%");
-        listVoyage = (List<Voyage>) q.getResultList();
-        return listVoyage;
-    }*/
-    
     public List<Voyage> findPays(String pays){
         List<Voyage> listVoyage = new ArrayList();
         Query q = em.createQuery("Select v FROM Voyage v join v.pays p where p.nom like :pays_nom");
         q.setParameter("pays_nom", "%" + pays + "%");
         listVoyage = (List<Voyage>) q.getResultList();
+        listVoyage = orderByNom(true, listVoyage);
         return listVoyage;
     }
+    
+    public List<Voyage> findSejour(){
+        List<Voyage> listVoyage = new ArrayList();
+        Query q = em.createQuery("Select v FROM Sejour v");
+        listVoyage = (List<Voyage>) q.getResultList();
+        listVoyage = orderByNom(true, listVoyage);
+        return listVoyage;
+    }
+    
+    public List<Voyage> findCircuit(){
+        List<Voyage> listVoyage = new ArrayList();
+        Query q = em.createQuery("Select v FROM Circuit v");
+        listVoyage = (List<Voyage>) q.getResultList();
+        listVoyage = orderByNom(true, listVoyage);
+        return listVoyage;
+    }
+    /**
+     * 
+     * @param ascDesc Si 0, la liste sera triée par ordre alphabétique, si 1, l'ordre inverse
+     * @param tochange La liste que l'on souhaite inverser
+     * @return La liste ordonée par nom dans l'ordre alphabétique/inverse
+     */
+    private List<Voyage> orderByNom(final boolean ascDesc, List<Voyage> tochange){
+        Collections.sort(tochange, new Comparator<Voyage>(){
+            @Override
+            public int compare(Voyage o1, Voyage o2) {
+                if(ascDesc){
+                    return o1.getNom().compareToIgnoreCase(o2.getNom());
+                }
+                else{
+                    return -(o1.getNom().compareToIgnoreCase(o2.getNom()));
+                }      
+            }
+        }
+        );
+        return tochange;
+    }
+    
+    
+    
+    public List<Voyage> orderByType(final boolean ascDesc, List<Voyage> tochange){
+    Collections.sort(tochange, new Comparator<Voyage>(){
+            @Override
+            public int compare(Voyage o1, Voyage o2) {
+                if(ascDesc){
+                    return o1.getNom().compareToIgnoreCase(o2.getNom());
+                }
+                else{
+                    return -(o1.getNom().compareToIgnoreCase(o2.getNom()));
+                }      
+            }
+        }
+        );
+        return tochange;
+    }
+    
+    
 
     @Override
     public void create(Voyage obj) {
@@ -76,9 +126,12 @@ public class VoyageDAO extends DAO<Voyage> {
     @Override
     public List<Voyage> find() {
       List<Voyage> listeVoyage = new ArrayList();
-      Query q = em.createQuery("Select v FROM "+TABLE_NAME +" v" );
+      Query q = em.createQuery("Select v FROM Voyage v" );
       listeVoyage = (List<Voyage>) q.getResultList();
+      listeVoyage = orderByNom(true, listeVoyage);
       return listeVoyage;
     }
+    
+    
     
 }
