@@ -67,7 +67,14 @@ public abstract class Voyage {
         return options;
     }
     
+    public void addOptions(Options opt){
+        options.add(opt);
+        
+    }
     
+    public void addPays(Pays p){
+        pays.add(p);
+    }
     
     public Voyage() {
     }

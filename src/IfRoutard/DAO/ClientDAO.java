@@ -23,10 +23,6 @@ public class ClientDAO extends DAO<Client> {
     
     @Override
     public Client find(long id) {
-       /*Query q = em.createQuery("Select c FROM Client c where c.id = :mon_id");
-       q.setParameter("mon_id", id);
-       Client cl = (Client) q.getSingleResult();
-       return cl; */
        Client cl = em.find(Client.class, id);
        if(cl != null){
            // on coupe le lien avec la base de donnée
@@ -39,10 +35,9 @@ public class ClientDAO extends DAO<Client> {
         // TODO : améliorer la recherche des clients
         List<Client> maListe = new ArrayList<Client>();
         
-        Query q = em.createQuery("Select c FROM "+TABLE_NAME+ " c where c.nom like :ma_chaine or c.prenom like :ma_chaine2 " );
+        Query q = em.createQuery("Select c FROM "+TABLE_NAME+ " c where c.nom like :ma_chaine or c.prenom like :ma_chaine " );
         
         q.setParameter("ma_chaine", "%" + chaine +"%");
-        q.setParameter("ma_chaine2", "%" + chaine + "%");
         maListe = (List<Client>) q.getResultList();
         return maListe;
     }

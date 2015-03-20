@@ -31,6 +31,14 @@ public class VoyageDAO extends DAO<Voyage> {
        }   
         return vo;
     }
+    
+    public List<Voyage> find(String name){
+        List<Voyage> listVoyage = new ArrayList();
+        Query q = em.createQuery("Select v FROM "+TABLE_NAME +" v where nom like :nom_voyage" );
+        q.setParameter("nom_voyage", "%"+name+"%");
+        listVoyage = (List<Voyage>) q.getResultList();
+        return listVoyage;
+    }
 
     @Override
     public void create(Voyage obj) {
@@ -59,7 +67,7 @@ public class VoyageDAO extends DAO<Voyage> {
 
     @Override
     public List<Voyage> find() {
-      List<Voyage> listeVoyage = new ArrayList<Voyage>();
+      List<Voyage> listeVoyage = new ArrayList();
       Query q = em.createQuery("Select v FROM "+TABLE_NAME +" v" );
       listeVoyage = (List<Voyage>) q.getResultList();
       return listeVoyage;
