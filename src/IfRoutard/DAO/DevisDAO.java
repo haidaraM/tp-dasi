@@ -5,6 +5,7 @@
  */
 package IfRoutard.DAO;
 
+import IfRoutard.metier.modele.Client;
 import IfRoutard.metier.modele.Devis;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +22,12 @@ public class DevisDAO extends DAO<Devis>{
     
     @Override
     public Devis find(long id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         Devis dev = em.find(Devis.class, id);
+       if(dev != null){
+           // on coupe le lien avec la base de donnée
+           em.detach(dev);
+       }      
+       return dev;
 
     }
     
@@ -32,7 +38,9 @@ public class DevisDAO extends DAO<Devis>{
 
     @Override
     public void create(Devis obj) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        JpaUtil.ouvrirTransaction();
+        em.persist(obj); 
+        JpaUtil.validerTransaction();
     }
 
     @Override

@@ -11,6 +11,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
@@ -31,15 +32,19 @@ public class Devis {
     
     private int nbPersonnes;
     
+    @JoinColumn(nullable = false)
     @ManyToOne
     private Client client;
     
+    @JoinColumn(nullable = false)
     @ManyToOne
     private Conseiller conseiller;
     
+    @JoinColumn(nullable = false)
     @OneToOne
     private Options options;
     
+    @JoinColumn(nullable = false)
     @OneToOne
     private Voyage voyage;
     
@@ -102,4 +107,6 @@ public class Devis {
     public void setVoyage(Voyage voyage) {
         this.voyage = voyage;
     }
+    
+    
 }
