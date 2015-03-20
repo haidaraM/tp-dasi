@@ -44,10 +44,6 @@ public abstract class Voyage {
     @OneToMany
     private List<Options> options = new ArrayList();
     
-    @ManyToMany(mappedBy = "voyages")
-    private List<Client> clients = new ArrayList();
-    
-    
     public Voyage(String nom, int duree, String description, String code) {
         this.nom = nom;
         this.duree = duree;

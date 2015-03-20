@@ -40,9 +40,6 @@ public class Client {
     @OneToMany(mappedBy = "client")
     private List<Devis> devis = new ArrayList();
     
-    @ManyToMany
-    private List<Voyage> voyages = new ArrayList();
-    
     public Client() {
     } 
     
