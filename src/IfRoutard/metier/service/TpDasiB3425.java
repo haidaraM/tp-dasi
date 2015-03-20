@@ -77,7 +77,7 @@ public class TpDasiB3425 {
             System.out.println(maListeV1);
         }
         
-        maListeV = vDao.orderByDuree(false, maListeV);
+      //  maListeV = vDao.orderByDuree(false, maListeV);
         for (Voyage maListeV1 : maListeV) {
             
             System.out.println(maListeV1);
