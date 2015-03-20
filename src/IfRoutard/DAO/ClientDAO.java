@@ -69,7 +69,6 @@ public class ClientDAO extends DAO<Client> {
     @Override
     public void delete(Client clientToDelete) {
         //TODO : faire la suppression d'un client
-         
     }
 
     @Override

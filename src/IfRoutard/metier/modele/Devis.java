@@ -27,12 +27,10 @@ public class Devis {
     
     @Column(nullable = false)
     @Temporal(javax.persistence.TemporalType.DATE)
-    private Date dateDepart;
+    private Date date;
     
     private int nbPersonnes;
     
-    private String contrat;
-
     @ManyToOne
     private Client client;
     
@@ -45,10 +43,9 @@ public class Devis {
     @OneToOne
     private Voyage voyage;
     
-    public Devis(Date dateDepart, int nbPersonnes, String contrat) {
-        this.dateDepart = dateDepart;
+    public Devis(Date date, int nbPersonnes) {
+        this.date = date;
         this.nbPersonnes = nbPersonnes;
-        this.contrat = contrat;
     }
 
     public Devis() {
@@ -58,12 +55,12 @@ public class Devis {
         return id;
     }
 
-    public Date getDateDepart() {
-        return dateDepart;
+    public Date getDate() {
+        return date;
     }
 
-    public void setDateDepart(Date dateDepart) {
-        this.dateDepart = dateDepart;
+    public void setDate(Date dateDepart) {
+        this.date = dateDepart;
     }
 
     public int getNbPersonnes() {
@@ -73,15 +70,7 @@ public class Devis {
     public void setNbPersonnes(int nbPersonnes) {
         this.nbPersonnes = nbPersonnes;
     }
-
-    public String getContrat() {
-        return contrat;
-    }
-
-    public void setContrat(String contrat) {
-        this.contrat = contrat;
-    }
-
+    
     public Client getClient() {
         return client;
     }
@@ -97,7 +86,20 @@ public class Devis {
     public Voyage getVoyage() {
         return voyage;
     }
-    
-    
-    
+
+    public void setClient(Client client) {
+        this.client = client;
+    }
+
+    public void setConseiller(Conseiller conseiller) {
+        this.conseiller = conseiller;
+    }
+
+    public void setOptions(Options options) {
+        this.options = options;
+    }
+
+    public void setVoyage(Voyage voyage) {
+        this.voyage = voyage;
+    }
 }
