@@ -48,7 +48,7 @@ public abstract class Voyage {
         this.nom = nom;
         this.duree = duree;
         this.description = description;
-        this.code = code;
+        this.code = code;       
     }
 
     public String getCode() {

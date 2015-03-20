@@ -17,8 +17,6 @@ import javax.persistence.Query;
  */
 public class ClientDAO extends DAO<Client> {
 
-    
-    private final String TABLE_NAME = "Client";
     private EntityManager em = JpaUtil.obtenirEntityManager();
     
     @Override
@@ -35,8 +33,7 @@ public class ClientDAO extends DAO<Client> {
         // TODO : améliorer la recherche des clients
         List<Client> maListe = new ArrayList<Client>();
         
-        Query q = em.createQuery("Select c FROM "+TABLE_NAME+ " c where c.nom like :ma_chaine or c.prenom like :ma_chaine " );
-        
+        Query q = em.createQuery("Select c FROM Client c where c.nom like :ma_chaine or c.prenom like :ma_chaine");
         q.setParameter("ma_chaine", "%" + chaine +"%");
         maListe = (List<Client>) q.getResultList();
         return maListe;
@@ -69,7 +66,7 @@ public class ClientDAO extends DAO<Client> {
     @Override
     public List<Client> find() {
         List<Client> maListe = new ArrayList<Client>();
-        Query q = em.createQuery("Select c FROM "+TABLE_NAME +" c"  );
+        Query q = em.createQuery("Select c FROM Client c");
         maListe = (List<Client>) q.getResultList();
         return maListe;
         

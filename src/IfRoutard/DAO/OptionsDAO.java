@@ -16,7 +16,7 @@ import javax.persistence.Query;
  * @author elmhaidara
  */
 public class OptionsDAO extends DAO<Options> {
-     private final String TABLE_NAME = "Option";
+    
     private EntityManager em = JpaUtil.obtenirEntityManager();
 
     @Override
@@ -32,7 +32,7 @@ public class OptionsDAO extends DAO<Options> {
     @Override
     public List<Options> find() {
         List<Options> maListe = new ArrayList<Options>();
-        Query q = em.createQuery("Select o FROM "+TABLE_NAME +" o"  );
+        Query q = em.createQuery("Select o FROM Options o"  );
         maListe = (List<Options>) q.getResultList();
         return maListe;
     }

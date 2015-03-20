@@ -18,7 +18,6 @@ import javax.persistence.Query;
  */
 public class PaysDAO extends DAO<Pays>{
     
-    private final String TABLE_NAME = "Pays";
     private EntityManager em = JpaUtil.obtenirEntityManager();
 
     @Override
@@ -32,7 +31,7 @@ public class PaysDAO extends DAO<Pays>{
     @Override
     public List<Pays> find() {
         List<Pays> listePays = new ArrayList<Pays>();
-        Query q = em.createQuery("Select p FROM "+TABLE_NAME +" p" );
+        Query q = em.createQuery("Select p FROM Pays p");
         listePays = (List<Pays>) q.getResultList();
         return listePays;
     }

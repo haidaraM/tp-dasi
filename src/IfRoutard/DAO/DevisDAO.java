@@ -17,7 +17,6 @@ import javax.persistence.Query;
 public class DevisDAO extends DAO<Devis>{
 
     
-    private final String TABLE_NAME = "Devis";
     private EntityManager em = JpaUtil.obtenirEntityManager();
     
     @Override
