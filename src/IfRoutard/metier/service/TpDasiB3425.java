@@ -50,17 +50,23 @@ public class TpDasiB3425 {
             
             System.out.println(maListeV1);
         }*/
+        Pays p1 = new Pays("Macedoine", 12, 15, "zob", "MAcedoineLa", "MAC", "mace");
+        Pays p2 = new Pays("Macedoi", 12, 15, "zob", "MAcedoineLa", "MEC", "mace");
+        pDao.create(p1);
+        pDao.create(p2);
         
-        Devis dev = new Devis(new Date(2014, 10, 20), 2);
-        dev.setConseiller(new Conseiller("Paul", "lepoulpe", "email"));
-        dev.setClient(new Client("nom", "prenom", "civilité","tel", "mail"));
-        dev.setVoyage(new Sejour("nom", 10, "descri", "code", "resi"));
+        Sejour v1 = new Sejour("Nom1", 7, "Description", "MAC", "Hotel");
+        Sejour v2 = new Sejour("Nom2", 7, "Description", "FRA", "Hotel");
+        v1.addPays(p1);
+        v2.addPays(p2);
+        vDao.create(v1);
+        vDao.create(v2);
         
-        DevisDAO dDAO = new DevisDAO();
-        List<Devis> maListeD = dDAO.find("Paul");
-        
-        for (Devis maListed1 : maListeD) {
-            System.out.println(maListed1);
+        maListeV.clear();
+        maListeV = vDao.findPays("Macedoine");
+        for (Voyage maListeV1 : maListeV) {
+            
+            System.out.println(maListeV1);
         }
         
         JpaUtil.fermerEntityManager();

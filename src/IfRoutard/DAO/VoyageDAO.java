@@ -42,8 +42,10 @@ public class VoyageDAO extends DAO<Voyage> {
     
     public List<Voyage> findPays(String pays){
         List<Voyage> listVoyage = new ArrayList();
-        Query q = em.createQuery("Select v FROM Voyage v, Pays p where v.pays = p.id and p.nom = :pays_nom");
-        q.setParameter("pays_nom", "%" + pays + "%")
+        Query q = em.createQuery("Select v FROM Voyage v join v.pays p where p.nom like :pays_nom");
+        q.setParameter("pays_nom", "%" + pays + "%");
+        listVoyage = (List<Voyage>) q.getResultList();
+        return listVoyage;
     }
 
     @Override
