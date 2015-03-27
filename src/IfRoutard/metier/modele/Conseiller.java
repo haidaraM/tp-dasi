@@ -19,7 +19,8 @@ public class Conseiller {
     private String nom;
     private String prenom;
     private String mail;
-
+    
+    //TODO : gerer le nombre de clients par conseiller
     @OneToMany(mappedBy = "conseiller")
     private List<Devis> devis;
     

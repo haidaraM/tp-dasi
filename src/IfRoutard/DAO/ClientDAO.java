@@ -18,7 +18,7 @@ import javax.persistence.Query;
 public class ClientDAO extends DAO<Client> {
 
     private EntityManager em = JpaUtil.obtenirEntityManager();
-    
+    //TODO : mettre entity manager dans la classe mere
     @Override
     public Client find(long id) {
        Client cl = em.find(Client.class, id);
@@ -37,6 +37,13 @@ public class ClientDAO extends DAO<Client> {
         q.setParameter("ma_chaine", "%" + chaine +"%");
         maListe = (List<Client>) q.getResultList();
         return maListe;
+    }
+    
+    public Client findByMail(String mail){
+        Query q = em.createQuery("Select c from Client c where c.mail = :mail_client");
+        q.setParameter("mail_client", mail);
+        Client cl = (Client) q.getSingleResult();
+        return cl;
     }
 
     @Override
@@ -60,7 +67,7 @@ public class ClientDAO extends DAO<Client> {
 
     @Override
     public void delete(Client clientToDelete) {
-        //TODO : faire la suppression d'un client
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override

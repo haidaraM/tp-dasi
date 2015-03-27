@@ -5,6 +5,8 @@
  */
 package IfRoutard.metier.modele;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -80,7 +82,12 @@ public class Options {
     public void setTypeTransport(String typeTransport) {
         this.typeTransport = typeTransport;
     }
-    
+
+    @Override
+    public String toString() {
+        DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        return "Date : "+format.format(dateDepart)+ " - Lieu : " + lieuDepart + "- Tarif : " + tarif +" - Transport : "+ typeTransport;
+    }
     
     
 }

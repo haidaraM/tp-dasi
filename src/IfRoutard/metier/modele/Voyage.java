@@ -37,7 +37,7 @@ public abstract class Voyage {
     private String description;
     
     private String code;
-
+    
     @ManyToMany
     private List<Pays> pays = new ArrayList();
     
