@@ -55,10 +55,11 @@ public class ClientData {
             String nom = ClientData.CLIENTS.get(i)[1];
             String prenom = ClientData.CLIENTS.get(i)[2];
             String adresse = ClientData.CLIENTS.get(i)[4];
+            adresse=adresse.replace('\'',' ');
             String telephone = ClientData.CLIENTS.get(i)[5];
             String email = ClientData.CLIENTS.get(i)[6];
-            System.out.print("INSERT INTO Client (ID, CIVILITE, MAIL, NOM, NUMEROTELEPHONE, PRENOM) values ( ");
-            System.out.println(i +", '" + civilite +"', '" + email +"', '" + nom +"', '" + telephone +"', '" + prenom +"' );");
+            System.out.print("INSERT INTO Client (ID, ADRESSE, CIVILITE, MAIL, NOM, NUMEROTELEPHONE, PRENOM) values ( ");
+            System.out.println(i +", '" +adresse +"', '"+ civilite +"', '" + email +"', '" + nom +"', '" + telephone +"', '" + prenom +"' );");
         }
     }
 
@@ -91,7 +92,7 @@ public class ClientData {
     }
 
     public static List<String[]> CLIENTS = Arrays.asList(new String[][]{
-        {"M.", "BORROTI MATIAS DANTAS", "Raphaël", "1976-07-10", "70 rue des Coquelicots, Villeneuve-d'Ascq", "0328178508", "rborrotimatiasdantas4171@free.fr"},
+        {"M.", "BORROTI MATIAS DANTAS", "Raphaël", "1976-07-10", "70 rue des Coquelicots, Villeneuve-dAscq", "0328178508", "rborrotimatiasdantas4171@free.fr"},
         {"Mme", "OLMEADA MARAIS", "Nor", "1983-12-09", "131 rue de Valenciennes, Reims", "0418932546", "nolmeadamarais1551@gmail.com"},
         {"Mme", "RAYES GEMEZ", "Olena", "1992-08-28", "22 rue Jubin, Nancy", "0532731620", "orayesgemez5313@outlook.com"},
         {"Mme", "SING", "Ainhoa", "1982-11-09", "138 rue de Livry-Garan, Aubagne", "0705224200", "asing8183@free.fr"},
