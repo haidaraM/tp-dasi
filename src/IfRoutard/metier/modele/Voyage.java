@@ -5,6 +5,7 @@
  */
 package IfRoutard.metier.modele;
 
+import static IfRoutard.metier.modele.Voyage_.pays;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.DiscriminatorColumn;
@@ -39,10 +40,10 @@ public abstract class Voyage {
     private String code;
     
     @ManyToMany
-    private List<Pays> pays = new ArrayList();
+    protected List<Pays> pays = new ArrayList();
     
     @OneToMany
-    private List<Options> options = new ArrayList();
+    protected List<Options> options = new ArrayList();
     
     public Voyage(String nom, int duree, String description, String code) {
         this.nom = nom;
@@ -109,10 +110,21 @@ public abstract class Voyage {
 
     @Override
     public String toString() {
-        return "Nom " + nom +" -- "+
-                "Durée " + duree +" -- "+
-                " Description " + description +" -- ";
+        Pays temp = pays.get(0);
+        
+        return "-----------------------------------------------------\n"+
+                temp.getNom() + "\n"+ temp.getCapitale() + ", "+
+                temp.getPopulation() + "hab, "+ temp.getSuperficie() + 
+                "km2, langue officielle : "+temp.getLangue() + "\n" +
+                "____________________________________________________\n *** [" + this.getId() +
+                "] " + this.getNom() + "\n Séjour, " + this.getDuree() + " jour(s) \n" +
+                this.getDescription() + "\n\n*Fiche voyage\n";
     }
+    
+    public String getType(){
+        return "";
+    }
+    
     
     
        

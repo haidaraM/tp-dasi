@@ -35,6 +35,9 @@ public class Client {
     @Column(nullable = false)
     private String mail;
     
+    @Column(nullable = true)
+    private String Adresse;
+    
     private String numeroTelephone;
     
     @OneToMany(mappedBy = "client")
@@ -43,12 +46,13 @@ public class Client {
     public Client() {
     } 
     
-    public Client(String Nom, String Prenom, String civilite, String numero, String mail) {
+    public Client(String Nom, String Prenom, String civilite, String numero, String mail, String adresse) {
         this.nom = Nom;
         this.prenom = Prenom;
         this.civilite = civilite;
         this.numeroTelephone = numero;
         this.mail = mail;
+        this.Adresse = adresse; 
     }
 
     public long getId() {
@@ -87,13 +91,23 @@ public class Client {
         this.numeroTelephone = numeroTelephone;
     }
 
+    public void setAdresse(String Adresse) {
+        this.Adresse = Adresse;
+    }
+
     public String getMail() {
         return mail;
+    }
+
+    public String getAdresse() {
+        return Adresse;
     }
 
     @Override
     public String toString() {
         return prenom +" "+ nom +"\n"
+                +Adresse + "\n" 
+                +mail + "\n"
                 +numeroTelephone;
     }
 }

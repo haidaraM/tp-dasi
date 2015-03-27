@@ -46,10 +46,20 @@ public class Circuit extends Voyage{
 
     @Override
     public String toString() {
-        return super.toString() +
-                "Moyen de transport: "+ transport +" -- "+
-                "Distance : " + kilometrage +" -- ";
-                
+        String toReturn;
+        toReturn = super.toString() +
+                "Transport : " + this.getTransport() + "\nNombre de Kilomètres parcourus : " + this.getKilometrage() + 
+                " kms\n\n*Périodes et tarifs\n";
+        for (Options option : options) {
+            toReturn += "Au départ de " + option.getLieuDepart() + " le " + option.getDateDepart() + " -Tarif : "
+                    +option.getTarif() + " -Transport aérien : " + option.getTypeTransport() + "\n";
+        }
+        return toReturn;
+    }
+    
+    @Override
+    public String getType(){
+        return  "Circuit (" + this.getDuree() + " jours, " + this.getKilometrage() + " km," + this.getTransport() + ")";
     }
     
        

@@ -108,5 +108,18 @@ public class Devis {
         this.voyage = voyage;
     }
     
-    
+    public String toString(){
+        return "-------------------------------------------------------------------------------\nDate : "
+                + date + "\n" + client.getPrenom() +" "+ client.getNom() + 
+                client.getAdresse() + "\n" + client.getNumeroTelephone() + 
+                "\n\nVotre conseiller pour ce voyage : "+conseiller.getPrenom() + 
+                " " + conseiller.getNom() +" ("+conseiller.getMail() + ")\n\nVotre voyage : "+
+                voyage.getNom() + " ." +this.getVoyage().getPays().get(0) + "\n" + 
+                voyage.getType() + "\n\nDépart : le" + options.getDateDepart() +" de " + options.getLieuDepart()+
+                "\nTransport aérien (susceptible d'être modifié) : " +options.getLieuDepart()+ 
+                "\n\n" + voyage.getDescription() + "\\nn----------------------\nNombre de personnes : " + nbPersonnes + 
+                "\nTarif par personne : " + options.getTarif() + " € \nTOTAL : " + options.getTarif()*nbPersonnes + " €"                    
+                ;
+        
+}
 }
