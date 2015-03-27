@@ -8,7 +8,6 @@ package IfRoutard.DAO;
 import IfRoutard.metier.modele.Client;
 import java.util.ArrayList;
 import java.util.List;
-import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
 /**
@@ -17,8 +16,6 @@ import javax.persistence.Query;
  */
 public class ClientDAO extends DAO<Client> {
 
-    private EntityManager em = JpaUtil.obtenirEntityManager();
-    //TODO : mettre entity manager dans la classe mere
     @Override
     public Client find(long id) {
        Client cl = em.find(Client.class, id);

@@ -6,6 +6,7 @@
 package IfRoutard.DAO;
 
 import IfRoutard.metier.modele.Client;
+import IfRoutard.metier.modele.Conseiller;
 import IfRoutard.metier.modele.Devis;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,8 +19,7 @@ import javax.persistence.Query;
 public class DevisDAO extends DAO<Devis>{
 
     
-    private EntityManager em = JpaUtil.obtenirEntityManager();
-    
+       
     @Override
     public Devis find(long id) {
          Devis dev = em.find(Devis.class, id);
@@ -37,9 +37,24 @@ public class DevisDAO extends DAO<Devis>{
     }
 
     @Override
-    public void create(Devis obj) {
+    public void create(Devis devis) {
+        
+        // recherche du conseiller avec le nombre min de client
+        Query q = em.createQuery("Select con From Conseiller con");
+        List<Conseiller> liste_conseiller = new ArrayList();
+        liste_conseiller = q.getResultList();
+        Conseiller con_min = liste_conseiller.get(0);
+        for (Conseiller conseiller : liste_conseiller) {
+            if(conseiller.getNumClient() < con_min.getNumClient())
+            {
+                con_min = conseiller;
+            }
+        }
+        
+        devis.setConseiller(con_min);
+        
         JpaUtil.ouvrirTransaction();
-        em.persist(obj); 
+        em.persist(devis); 
         JpaUtil.validerTransaction();
     }
 
@@ -55,6 +70,10 @@ public class DevisDAO extends DAO<Devis>{
 
     @Override
     public List<Devis> find() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void ArrayList() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

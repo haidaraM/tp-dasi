@@ -20,7 +20,7 @@ import javax.persistence.Query;
  */
 public class VoyageDAO extends DAO<Voyage> {
 
-    private EntityManager em = JpaUtil.obtenirEntityManager();
+    
     
     @Override
     public Voyage find(long id) {

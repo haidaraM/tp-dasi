@@ -17,8 +17,7 @@ import javax.persistence.Query;
  */
 public class OptionsDAO extends DAO<Options> {
     
-    private EntityManager em = JpaUtil.obtenirEntityManager();
-
+    
     @Override
     public Options find(long id) {
         Options op = em.find(Options.class, id);

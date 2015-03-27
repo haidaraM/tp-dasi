@@ -1,5 +1,6 @@
 package IfRoutard.metier.modele;
 
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -22,7 +23,7 @@ public class Conseiller {
     
     //TODO : gerer le nombre de clients par conseiller
     @OneToMany(mappedBy = "conseiller")
-    private List<Devis> devis;
+    private List<Devis> devis = new ArrayList();
     
     public Conseiller() {
 
@@ -46,7 +47,10 @@ public class Conseiller {
         return devis;
     }
     
-    
+    public int getNumClient()
+    {
+        return devis.size();
+    }
     
     public String getPrenom() {
         return prenom;

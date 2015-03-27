@@ -6,6 +6,7 @@
 package IfRoutard.DAO;
 
 import java.util.List;
+import javax.persistence.EntityManager;
 
 /**
  *
@@ -14,6 +15,10 @@ import java.util.List;
  */
 public abstract class DAO<T> {
    
+        // TODO : enlever les méthodes inutiles
+        
+        protected EntityManager em = JpaUtil.obtenirEntityManager();
+    
     	/**
 	 * Permet de récupérer un objet via son ID
 	 * @param id
