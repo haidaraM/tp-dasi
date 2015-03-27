@@ -46,11 +46,5 @@ public abstract class DAO<T> {
 	 */
 	public abstract void update(T obj);
         
-	
-	/**
-	 * Permet la suppression d'une entrée de la base
-	 * @param obj
-	 */
-	public abstract void delete(T obj);
 
 }

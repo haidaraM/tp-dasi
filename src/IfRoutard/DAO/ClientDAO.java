@@ -69,11 +69,6 @@ public class ClientDAO extends DAO<Client> {
     }
 
     @Override
-    public void delete(Client clientToDelete) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
     public List<Client> find() {
         List<Client> maListe = new ArrayList<Client>();
         Query q = em.createQuery("Select c FROM Client c");

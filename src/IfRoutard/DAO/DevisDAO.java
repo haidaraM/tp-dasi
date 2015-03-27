@@ -64,11 +64,6 @@ public class DevisDAO extends DAO<Devis>{
     }
 
     @Override
-    public void delete(Devis obj) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
     public List<Devis> find() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
