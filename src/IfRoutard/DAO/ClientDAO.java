@@ -25,17 +25,7 @@ public class ClientDAO extends DAO<Client> {
        }      
        return cl;
     }
-    
-    public List<Client> find(String chaine){
-        // TODO : améliorer la recherche des clients
-        List<Client> maListe = new ArrayList<Client>();
-        
-        Query q = em.createQuery("Select c FROM Client c where c.nom like :ma_chaine or c.prenom like :ma_chaine");
-        q.setParameter("ma_chaine", "%" + chaine +"%");
-        maListe = (List<Client>) q.getResultList();
-        return maListe;
-    }
-    
+       
     public Client findByMail(String mail){
         Query q = em.createQuery("Select c from Client c where c.mail = :mail_client");
         q.setParameter("mail_client", mail);
@@ -73,8 +63,7 @@ public class ClientDAO extends DAO<Client> {
         List<Client> maListe = new ArrayList<Client>();
         Query q = em.createQuery("Select c FROM Client c");
         maListe = (List<Client>) q.getResultList();
-        return maListe;
-        
+        return maListe;    
     }
     
 }

@@ -5,9 +5,10 @@
  */
 package IfRoutard.metier.modele;
 
-import static IfRoutard.metier.modele.Voyage_.pays;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.Column;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.DiscriminatorType;
 import javax.persistence.Entity;
@@ -26,7 +27,7 @@ import javax.persistence.OneToMany;
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "DTYPE", discriminatorType = DiscriminatorType.STRING)
-public abstract class Voyage {
+public abstract class Voyage implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
@@ -37,6 +38,7 @@ public abstract class Voyage {
     
     private String description;
     
+    @Column(unique = true)
     private String code;
     
     @ManyToMany

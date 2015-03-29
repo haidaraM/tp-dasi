@@ -5,6 +5,7 @@
  */
 package IfRoutard.metier.modele;
 
+import java.io.Serializable;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -20,7 +21,7 @@ import javax.persistence.Temporal;
  * @author elmhaidara
  */
 @Entity
-public class Options {
+public class Options implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;

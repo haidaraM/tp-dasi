@@ -3,6 +3,7 @@ package IfRoutard.metier.service;
 import IfRoutard.DAO.ClientDAO;
 import IfRoutard.DAO.DevisDAO;
 import IfRoutard.DAO.JpaUtil;
+import IfRoutard.DAO.OptionsDAO;
 import IfRoutard.DAO.PaysDAO;
 import IfRoutard.DAO.VoyageDAO;
 import IfRoutard.metier.modele.Client;
@@ -40,10 +41,18 @@ public class TpDasiB3425 {
         Client c = cDAO.findByMail("mgoyat@yahoo.com"); // un client au piff
         Options o = v.getOptions().get(0); // la premiere option
         Devis dev = new Devis(new Date(), 2); // la date courante avec deux personnes
-        dev.setOptions(o);
+        
+        OptionsDAO oDao = new OptionsDAO();
+        Options op = new Options("Bamako", new Date(), 454, "Bateau");
+        
+        dev.setOptions(op);
         dev.setClient(c);
         dev.setVoyage(v);
+        
+  
         dDAO.create(dev);
+       
+
         
         JpaUtil.fermerEntityManager();
     }

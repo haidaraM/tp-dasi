@@ -41,10 +41,9 @@ public class DevisDAO extends DAO<Devis>{
         
         // recherche du conseiller avec le nombre min de client
         Query q = em.createQuery("Select con From Conseiller con");
-        List<Conseiller> liste_conseiller = new ArrayList();
-        liste_conseiller = q.getResultList();
+        List<Conseiller> liste_conseiller = q.getResultList();
         Conseiller con_min = liste_conseiller.get(0);
-        for (Conseiller conseiller : liste_conseiller) {
+        for(Conseiller conseiller : liste_conseiller) {
             if(conseiller.getNumClient() < con_min.getNumClient())
             {
                 con_min = conseiller;
@@ -65,10 +64,6 @@ public class DevisDAO extends DAO<Devis>{
 
     @Override
     public List<Devis> find() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private void ArrayList() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

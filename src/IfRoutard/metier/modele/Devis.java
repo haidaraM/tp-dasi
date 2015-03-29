@@ -5,6 +5,7 @@
  */
 package IfRoutard.metier.modele;
 
+import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -21,7 +22,7 @@ import javax.persistence.Temporal;
  * @author elmhaidara
  */
 @Entity
-public class Devis {
+public class Devis implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;

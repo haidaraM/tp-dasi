@@ -1,5 +1,6 @@
 package IfRoutard.metier.modele;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Entity;
@@ -13,7 +14,7 @@ import javax.persistence.OneToMany;
  * @author ebai
  */
 @Entity
-public class Conseiller {
+public class Conseiller implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
@@ -21,7 +22,6 @@ public class Conseiller {
     private String prenom;
     private String mail;
     
-    //TODO : gerer le nombre de clients par conseiller
     @OneToMany(mappedBy = "conseiller")
     private List<Devis> devis = new ArrayList();
     

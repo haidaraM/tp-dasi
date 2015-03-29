@@ -5,6 +5,7 @@
  */
 package IfRoutard.metier.modele;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Entity;
@@ -18,7 +19,7 @@ import javax.persistence.ManyToMany;
  * @author elmhaidara
  */
 @Entity
-public class Pays {
+public class Pays implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;

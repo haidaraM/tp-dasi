@@ -32,7 +32,7 @@ public class Client {
     @Column(nullable = false)
     private String civilite;
     
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String mail;
     
     @Column(nullable = true)
