@@ -52,14 +52,13 @@ public class Demo {
         String adresse = Saisie.lireChaine("Adresse?\n");
         String tel = Saisie.lireChaine("Numéro de téléphone?\n");
         Client c = new Client(nom, prenom, civilite, tel, mail, adresse);
-        ClientDAO cd = new ClientDAO();
-        cd.create(c);
+        Service.ajouterNouveauClient(c);
         System.out.println("Client crée !\n"); 
     }
     
     public static void ListerClients(){
-        ClientDAO cd = new ClientDAO();
-        List<Client> liste = cd.find();
+        
+        List<Client> liste = Service.listClient();
         for (Client liste1 : liste) {
             System.out.println(liste1.toString()+"\n");
         }   

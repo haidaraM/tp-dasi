@@ -30,11 +30,11 @@ public class TpDasiB3425 {
      */
     public static void main(String[] args) {
            
-        JpaUtil.creerEntityManager();
+        //JpaUtil.creerEntityManager();
         
-        //Demo.lancerDemo();
+        Demo.lancerDemo();
         
-        DevisDAO dDAO = new DevisDAO();
+        /*DevisDAO dDAO = new DevisDAO();
         ClientDAO cDAO = new ClientDAO();
         VoyageDAO vDAO = new VoyageDAO();
         Voyage v = vDAO.find(173); // je prends un voyage au piff avec au moins une option
@@ -50,11 +50,11 @@ public class TpDasiB3425 {
         dev.setVoyage(v);
         
   
-        dDAO.create(dev);
+        dDAO.create(dev); */
        
 
         
-        JpaUtil.fermerEntityManager();
+        //JpaUtil.fermerEntityManager();
     }
     
 }

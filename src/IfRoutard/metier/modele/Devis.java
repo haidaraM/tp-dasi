@@ -109,6 +109,7 @@ public class Devis implements Serializable {
         this.voyage = voyage;
     }
     
+    @Override
     public String toString(){
         return "-------------------------------------------------------------------------------\nDate : "
                 + date + "\n" + client.getPrenom() +" "+ client.getNom() + 
