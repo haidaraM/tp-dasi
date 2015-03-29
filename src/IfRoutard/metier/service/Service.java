@@ -36,6 +36,16 @@ public class Service {
         return liste;
     }
     
+    public static List<Client> listClient(){
+        JpaUtil.creerEntityManager();
+        
+        ClientDAO cDao = new ClientDAO();
+        List<Client> list = cDao.find();
+        
+        JpaUtil.fermerEntityManager();
+        return list;
+    }
+    
     /**
      * Recupere les voyages se passant dans le pays dont le nom est passé en paramètre
      * @return 
