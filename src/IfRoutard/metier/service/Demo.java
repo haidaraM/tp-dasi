@@ -6,8 +6,11 @@
 package IfRoutard.metier.service;
 
 import IfRoutard.DAO.ClientDAO;
+import IfRoutard.DAO.VoyageDAO;
 import IfRoutard.metier.modele.Client;
 import IfRoutard.metier.modele.Saisie;
+import IfRoutard.metier.modele.Voyage;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -66,16 +69,35 @@ public class Demo {
     
     public static void CreerDevis(){
         ClientDAO cd = new ClientDAO();
+        VoyageDAO vd = new VoyageDAO();
+        String choixrecherche;
+        List <Voyage> listeVoyage = new ArrayList();
         String mail = Saisie.lireChaine("Veuillez vous identifier grâce à votre adresse e-mail:\n");
         Client c;
         if ((c=cd.findByMail(mail)) != null){
-            String choixrecherche = Saisie.lireChaine("Bienvenue" + c.getPrenom() + "\n"
+            do{
+            choixrecherche = Saisie.lireChaine("Bienvenue" + c.getPrenom() + "\n"
                     + "Choix du voyage : 1-Par pays\n"
                     + "                  2-Par type - Séjour\n"
-                    + "                  3-Par type - Circuit\n"
-            );
+                    + "                  3-Par type - Circuit\n");
+            }
+            while(!choixrecherche.equals("1")||!choixrecherche.equals("2")||!choixrecherche.equals("3"));       
+            switch (choixrecherche){
+                case "1":
+                    listeVoyage = vd.findPays(Saisie.lireChaine("Nom de Pays?\n"));
+                    break;
+                case "2":
+                    listeVoyage = vd.findSejour();
+                    break;
+                case "3":
+                    listeVoyage = vd.findCircuit();
+            }
+            for(Voyage lVoyage : listeVoyage){
+                System.out.println(lVoyage.getId() + " " + lVoyage.toString());
+            }
+            
         }
-        else{
+        else {
             System.out.println("Il n'y a pas de compte associé à cette adresse");
         }
     }
