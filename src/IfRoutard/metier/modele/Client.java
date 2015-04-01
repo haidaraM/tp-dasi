@@ -36,7 +36,7 @@ public class Client {
     private String mail;
     
     @Column(nullable = true)
-    private String Adresse;
+    private String adresse;
     
     private String numeroTelephone;
     
@@ -52,7 +52,7 @@ public class Client {
         this.civilite = civilite;
         this.numeroTelephone = numero;
         this.mail = mail;
-        this.Adresse = adresse; 
+        this.adresse = adresse; 
     }
 
     public long getId() {
@@ -92,7 +92,7 @@ public class Client {
     }
 
     public void setAdresse(String Adresse) {
-        this.Adresse = Adresse;
+        this.adresse = Adresse;
     }
 
     public String getMail() {
@@ -100,13 +100,13 @@ public class Client {
     }
 
     public String getAdresse() {
-        return Adresse;
+        return adresse;
     }
 
     @Override
     public String toString() {
         return prenom +" "+ nom +"\n"
-                +Adresse + "\n" 
+                +adresse + "\n" 
                 +mail + "\n"
                 +numeroTelephone;
     }

@@ -53,66 +53,127 @@ public abstract class Voyage implements Serializable {
         this.description = description;
         this.code = code;       
     }
-
+    
+     public Voyage() {
+    }
+    /**
+     * Retourne un code unique du voyage pour un voyage.
+     * @return 
+     */
     public String getCode() {
         return code;
     }
 
+    /**
+     * Met à jour le code du voyage qui doit être unique.
+     * @param code 
+     */
     public void setCode(String code) {
         this.code = code;
     }
 
+    /**
+     * Retourne la liste des pays dans lequel le voyage se déroule.
+     * @return 
+     */
     public List<Pays> getPays() {
         return pays;
     }
 
+    /**
+     * Retourne la liste des options disponibles pour ce voyage.
+     * @return 
+     */
     public List<Options> getOptions() {
         return options;
     }
     
+    /**
+     * Ajoute une option au voyage.
+     * @param opt 
+     */
     public void addOptions(Options opt){
         options.add(opt);
         
     }
     
+    /**
+     * Ajoute un pays au voyage.
+     * @param p 
+     */
     public void addPays(Pays p){
         pays.add(p);
     }
     
-    public Voyage() {
-    }
-
+    /**
+     * Retourne l'identifiant du voyage.
+     * @return 
+     */
     public long getId() {
         return id;
     }
+    
+    /**
+     * Renvoie le nom du voyage.
+     * @return 
+     */
 
     public String getNom() {
         return nom;
     }
 
+    /**
+     * Met à jour le nom du voyage.
+     * @param nom 
+     */
     public void setNom(String nom) {
         this.nom = nom;
     }
 
+    /**
+     * Retourne la durée du voyage.
+     * @return 
+     */
     public int getDuree() {
         return duree;
     }
 
+    /**
+     * Met à jour la durée du voyage.
+     * @param duree 
+     */
     public void setDuree(int duree) {
         this.duree = duree;
     }
 
+    /**
+     * Retourne la description du voyage.
+     * @return 
+     */
     public String getDescription() {
         return description;
     }
 
+    /**
+     * Met à jour la description du voyage.
+     * @param description 
+     */
     public void setDescription(String description) {
         this.description = description;
     }
 
+    /**
+     * Retourne description succinte du voyage.
+     * @return 
+     */
     public String shortDescription(){
         return (nom +" "+ pays.get(0).getNom() + " " + this.getType());
     }
+    
+    /**
+     * Retourne une description détaillée du voyage.
+     * @return 
+     */
     @Override
     public String toString() {
         Pays temp = pays.get(0);
@@ -128,9 +189,6 @@ public abstract class Voyage implements Serializable {
     
     public String getType(){
         return "";
-    }
-    
-    
-    
+    }    
        
 }

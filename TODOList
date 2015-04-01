@@ -1,4 +1,4 @@
-modele de domaine 
+modele de domaine => mis à jour
 ihm
 services
 
@@ -11,8 +11,8 @@ services
 //Trouver le conseiller ayant le moins de client ->
 -main "interractif" pour démo. ->
 //Création d'un devis
--UML
--AffichageDevis
+//-UML
+//-AffichageDevis
 -Maj Interface graphique
 -Maj ICARs
 -------------------------------------------------------------------------------
