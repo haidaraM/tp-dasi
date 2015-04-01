@@ -1,64 +1,44 @@
-	Application Employé			
-	Intention	Contrôle	Action	Réponse
-Accueil	Voir les voyages	Bouton Voyages	Click	Nouvelle fenêtre liste des voyages
-	Voir les Devis	Bouton Devis	Click	Nouvelle fenêtre liste des devis
-	Voir les Pays	Bouton Pays	Click	Nouvelle fenêtre liste des pays
-				
-Liste des Voyages	Rechercher un voyage	Zone de recherche puis bouton	Entrée clavier puis click	Mise à jour de la liste
-	Trier par Nom/Pays/Durée/Type	Liste des voyages – en tête	Click	Mise à jour de la liste
-	Ajouter/Modifier/Supprimer/Consulter un voyage	Liste + bouton rechercher	Sélection puis click	Nouvelle fenêtre voyage
-	Revenir à l’écran précédent	Bouton retour	Click	Retour à la fenêtre accueil
-				
-Voyages	Modifier pays concerné(s) par le voyage	Bouton annuler	Click	Nouvelle fenêtre liste des Pays
-	Ajouter une option	Bouton	Clavier puis click	Maj liste Options
-	Modifier une option	Liste + zone de texte + bouton	Sélection , clavier puis click	Maj liste Options
-	Supprimer une option	Liste + bouton	Sélection puis click	Maj liste Options
-	Valider les modifications	Bouton OK	Click	Retour à la liste des voyages
-	Annuler les modifications	Bouton annuler	Click	Retour à la liste des voyages
-				
-Liste des Devis	Rechercher un devis	Barre de recherche puis bouton	Entrée clavier puis click	Mise à jour de la liste
-	Trier par Nom/Date/Voyage/Durée	Liste des Devis – en têtes	Click	Mise à jour de la liste
-	Ajouter/Modifier/Supprimer/Consulter un devis	Liste des Devis + Bouton correspondant	Sélection puis click	Nouvelle fenêtre Devis
-	Revenir à l'écran précédent	Bouton retour	Click	Retour à la fenêtre accueil
-				
-Devis	Modifier date	Bouton calendrier	Click	Mise à jour de la date
-	Choisir client	Bouton choisir client	Click	Ouverture de la fenêtre Liste client
-	Choisir un voyage	Bouton choisir voyage	Click	Ouverture de la fenêtre liste voyage
-	Modifier Option	Bouton Modifier option	Click	Ouverture de la fenêtre Voyage
-	Changer le nombre de participants	Stepper	Click	maj du stepper
-	Valider les modifications	Bouton OK	Click	Retour à la liste des devis
-	Annuler les modifications	Bouton annuler	Click	Retour à la liste des devis
-				
-Liste des Pays	Rechercher un Pays	Barre de recherche puis bouton	Entrée clavier puis click	Mise à jour de la liste
-	Trier par Nom	Liste des Pays – en tête	Click	Mise à jour de la liste
-	Ajouter/Modifier/Supprimer/Consulter un pays	Boutons	Click	Ouverture de la fenêtre Pays
-	Revenir à l'écran précédent	Bouton retour	Click	Retour à la fenêtre accueil
-				
-Pays	Valider les modifications	Bouton OK	Click	Retour à la fenêtre Liste pays
-	Annuler les modifications	Bouton Annuler	Click	Retour à la fenêtre Liste pays
-				
-Liste des Clients	Rechercher un client	Barre de recherche puis bouton	Entrée clavier puis click	Mise à jour de la liste
-	Trier par Nom/Prénom/Commune	Liste des Clients – En tête	Click	Mise à jour de la liste
-	Consulter un Client	Bouton Consulter	Click	Ouverture de la fenêtre Client
-	Revenir à l'écran précédent	Bouton retour	Click	Retour à la fenêtre accueil
-				
-Client	Revenir à l'écran précédent	Bouton OK	Click	Retour à la Fenêtre Liste des Clients
-				
-				
-Application Web				
-Accueil	Créer un compte	Bouton	Click	Page création de compte
-	Se connecter	Zone de texte puis bouton	Entrée clavier puis click	Page Liste des voyages (si compte existant)
-				
-Création de Compte	Créer un compte	Zones de texte puis bouton	Entrées clavier puis click	Retour à la page d'accueil
-				
-Rechercher un voyage	Recherche par pays	Zone de texte puis bouton	Entrée clavier puis click	Page résultats
-	Recherche par type	ComboBox puis bouton	Sélection puis click	Page résultats
-	Se déconnecter	Bouton	Click	Page Accueil
-				
-Résultats	Trier par Nom/Pays/Durée/Type	Liste des voyages – en tête	Click	Mise à jour de la liste
-	Effectuer une nouvelle recherche	Bouton	Click	Page Recherche
-	Avoir des détails pour un voyage	Liste + bouton	Sélection puis click	Page voyage
-				
-Voyage				
-	Établir un devis	Liste + bouton	Sélection (option) puis click	Envoie mail (affichage écran)
-	Revenir à la liste	Bouton	Click	Page résultats
+,Application Employé,,,
+Fenêtre,Intention,Contrôle,Action,Réponse
+Application Créateurs,,,,
+Créateur - Connexion ,Se connecter à l'application,Zone de texte + Bouton « Connexion »,Entrée clavier puis click,Accès à la fenêtre Créateur – Accueil  
+,Quitter l'application,Bonton « Quitter »,Click,Fermeture de l'application
+,,,,
+Créateur – Accueil,Travailler sur les voyages,Bouton « Voyages »,Click,Accès à la fenêtre Créateur – Liste_Voyage
+,Se déconnecter,Bouton « Déconnexion »,Click,Accès à la fenêtre Créateur – Connexion
+,,,,
+Créateur – Liste_Voyage,Rechercher un voyage,Zone de recherche puis bouton « Rechercher »,Entrée clavier puis click,Mise à jour de la liste
+,Trier par Nom/Pays/Durée/Type,Liste des voyages – en tête,Click,Mise à jour de la liste
+,Ajouter/Modifier/Supprimer/Consulter un voyage,Liste + bouton « <Ajouter/Modifier/Supprimer/Consulter»,Sélection puis click,Accès à la fenêtre Créateur – Fiche Voyage
+,Revenir à l’écran précédent,Bouton « Retour »,Click,Accès à a fenêtre Créateur – Accueil
+,,,,
+Créateur – Fiche Voyage,Modifier le(s) pays concerné(s) par le voyage,Modifier la liste,Click,Ouverture de la  fenêtre Créateur – Liste Pays
+,Ajouter une option,Bouton « Ajouter »,Entrée clavier puis click,Mise à jour de la  liste des options et création
+,Modifier une option,Liste puis zone de texte puis bouton « Modifier »,Sélection puis entrée clavier puis click,Mise à jour de la  liste des options
+,Supprimer une option,Liste + bouton « Supprimer »,Sélection puis click,Mise à jour de la  liste des options
+,Valider les modifications apportées au voyage,Bouton « OK »,Click,Accès à la fenêtre Créateur – Liste_Voyage et Création/Modification…
+,Annuler les modifications,Bouton « Annuler »,Click,Accès à la fenêtre Créateur – Liste_Voyage
+,,,,
+Créateur – Liste Pays,Trier par Nom,Liste des Pays – en tête,Click,Mise à jour de la liste
+,Modifier le() )pays concerné(s) par le voyage,Sélection puis bouton « Modifier »,Click(s),Retour à la fenêtre Créateur – Fiche Voyage
+,Annuler les modifications apportées à la liste des pays,Bouton « Annuler »,Click,Retour à la fenêtre Créateur – Fiche Voyage
+,,,,
+,,,,
+,,,,
+Application Web,,,,
+Web – Accueil,Créer un compte,Bouton « Créer Votre Compte »,Click,Accès à la page Web – Création Compte
+,Se connecter,Zone de texte puis bouton « Connexion »,Entrée clavier puis click,Accès à la page Web – Recherche Voyage
+,,,,
+Web – Création Compte,Créer un compte,Zones de texte puis bouton « Créer votre compte »,Entrées clavier puis click,Retour à la page Web -Accueil et création du compte – envoi mail
+,,,,
+Web – Recherche Voyage,Recherche par pays,Zone de texte puis bouton « Rechercher »,Entrée clavier puis click,Accès à la page Web – Résultats
+,Recherche par type,ComboBox puis bouton « Rechercher »,Sélection puis click,Accès à la page Web – Résultats
+,Se déconnecter,Bouton « Déconnexion »,Click,Retour à la page Web -Accueil
+,,,,
+Web – Résultats,Trier par Nom/Pays/Durée/Type,Liste des voyages – en tête,Click,Mise à jour de la liste des résultats
+,Effectuer une nouvelle recherche,Bouton « Nouvelle Recherche »,Click,Accès à la page Web – Recherche Voyage
+,Avoir des détails pour un voyage,Liste puis bouton « Détails du voyage »,Sélection puis click,Accès à la page Web – Voyage
+,,,,
+Web – Voyage,,,,
+,Établir un devis,Liste des options puis bouton « Établir un devis »,Sélection (option) puis click,Envoi mail (affichage écran) et création du devis
+,Revenir à la liste,Bouton « Retour à la recherche »,Click,Page résultats
