@@ -114,7 +114,7 @@ public class Devis implements Serializable {
     @Override
     public String toString(){
         String barre_verticale = "-------------------------------------------------------------------------------";
-        DateFormat format = new SimpleDateFormat("dd EEEE yyyy");
+        DateFormat format = new SimpleDateFormat("EEEE dd MMMM yyyy");
         String la_date = "Date : " + format.format(date);
         String le_client = client.toString();
         String le_conseiller = "Votre conseiller pour ce voyage est : " + conseiller.toString();

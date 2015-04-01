@@ -5,14 +5,8 @@ import java.util.List;
 import javax.persistence.*;
 
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
- *
+ * Cette classe répresente les clients de l'agence de voyage.
  * @author ebai
  */
 
@@ -55,54 +49,106 @@ public class Client {
         this.adresse = adresse; 
     }
 
+    /**
+     * Retourne l'id du client sous lequel il est stocké dans la base de données.
+     * @return 
+     */
     public long getId() {
         return id;
     }
     
+    /**
+     * Retourne le nom du client.
+     * @return 
+     */
     public String getNom() {
         return nom;
     }
 
+    /**
+     * Met à jour le nom du client.
+     * @param Nom 
+     */
     public void setNom(String Nom) {
         this.nom = Nom;
     }
 
+    /**
+     * Retourne le prenom du client.
+     * @return 
+     */
     public String getPrenom() {
         return prenom;
     }
 
+    /**
+     * Met à jour le prénom du client.
+     * @param Prenom 
+     */
     public void setPrenom(String Prenom) {
         this.prenom = Prenom;
     }
 
+    /**
+     * Retourne la civilité du client.
+     * @return 
+     */
     public String getCivilite() {
         return civilite;
     }
 
+    /**
+     * Met à jour la civilité du client.
+     * @param civilite 
+     */
     public void setCivilite(String civilite) {
         this.civilite = civilite;
     }
 
+    /**
+     * Retourne le numéro de téléphone du client.
+     * @return 
+     */
     public String getNumeroTelephone() {
         return numeroTelephone;
     }
 
+    /**
+     * Met à jour le numéro de téléphone du client.
+     * @param numeroTelephone 
+     */
     public void setNumeroTelephone(String numeroTelephone) {
         this.numeroTelephone = numeroTelephone;
     }
 
+    /**
+     * Met à jour l'adresse du client.
+     * @param Adresse 
+     */
     public void setAdresse(String Adresse) {
         this.adresse = Adresse;
     }
 
+    /**
+     * Retourne l'adresse mail du client.
+     * @return 
+     */
     public String getMail() {
         return mail;
     }
-
+    
+    /**
+     * Retourne l'adresse du client.
+     * @return 
+     */
     public String getAdresse() {
         return adresse;
     }
 
+    /**
+     * Retourne les caractéristiques du client.
+     * @return 
+     */
     @Override
     public String toString() {
         return prenom +" "+ nom +"\n"

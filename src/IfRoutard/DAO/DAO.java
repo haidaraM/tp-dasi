@@ -15,20 +15,19 @@ import javax.persistence.EntityManager;
  */
 public abstract class DAO<T> {
    
-        // TODO : enlever les méthodes inutiles
         
         protected EntityManager em = JpaUtil.obtenirEntityManager();
     
     	/**
 	 * Permet de récupérer un objet via son ID
 	 * @param id
-	 * @return
+	 * @return l'objet retrouvé à travers son id
 	 */
 	public abstract T find(long id);
         
         /**
          * Permet de récuperer tous les objets
-         * @return
+         * @return Liste des objets présents dans la base de données
          */
         public abstract List<T> find();
 	
@@ -36,14 +35,13 @@ public abstract class DAO<T> {
 	 * Permet de créer une entrée dans la base de données
 	 * par rapport à un objet
 	 * @param obj
-     * @return 
+         * @return 
 	 */
 	public abstract boolean create(T obj);
 	
 	/**
 	 * Permet de mettre à jour les données d'une entrée dans la base 
 	 * @param obj
-         * @return 
 	 */
 	public abstract void update(T obj);
         

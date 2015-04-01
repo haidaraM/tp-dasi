@@ -163,7 +163,7 @@ public abstract class Voyage implements Serializable {
     }
 
     /**
-     * Retourne description succinte du voyage.
+     * Retourne description succincte du voyage.
      * @return 
      */
     public String shortDescription(){
