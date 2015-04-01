@@ -8,8 +8,11 @@ services
 -//trouver options correspondantes voyage ->M
 //Tostring pour devis ->E
 -Javadoc
--Trouver le conseiller ayant le moins de client ->
+//Trouver le conseiller ayant le moins de client ->
 -main "interractif" pour démo. ->
--Création d'un devis
-
+//Création d'un devis
+-UML
+-AffichageDevis
+-Maj Interface graphique
+-Maj ICARs
 -------------------------------------------------------------------------------

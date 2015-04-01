@@ -50,7 +50,7 @@ public class Sejour extends Voyage{
     
     @Override
     public String getType(){
-        return "Séjour (" + this.getDuree() + " jours, "+ this.getResidence() +")" ;
+        return "Séjour\n (" + this.getDuree() + " jours, "+ this.getResidence() +")" ;
     }
     
 

@@ -26,9 +26,9 @@ public class ClientDAO extends DAO<Client> {
        return cl;
     }
        
-    public Client findByMail(String mail){
+    public Client findByMail(String maile){
         Query q = em.createQuery("Select c from Client c where c.mail = :mail_client");
-        q.setParameter("mail_client", mail);
+        q.setParameter("mail_client", maile);
         List<Client> cl = (List<Client>)q.getResultList();
         if(cl.size() !=1){
             return null;

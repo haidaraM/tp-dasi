@@ -110,6 +110,9 @@ public abstract class Voyage implements Serializable {
         this.description = description;
     }
 
+    public String shortDescription(){
+        return (nom +" "+ pays.get(0).getNom() + " " + this.getType());
+    }
     @Override
     public String toString() {
         Pays temp = pays.get(0);
@@ -119,7 +122,7 @@ public abstract class Voyage implements Serializable {
                 temp.getPopulation() + "hab, "+ temp.getSuperficie() + 
                 "km2, langue officielle : "+temp.getLangue() + "\n" +
                 "____________________________________________________\n *** [" + this.getId() +
-                "] " + this.getNom() + "\n Séjour, " + this.getDuree() + " jour(s) \n" +
+                "] " + this.getNom() +"\n" + this.getType() + "\n" +
                 this.getDescription() + "\n\n*Fiche voyage\n";
     }
     

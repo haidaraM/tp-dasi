@@ -72,30 +72,36 @@ public class Demo {
         VoyageDAO vd = new VoyageDAO();
         String choixrecherche;
         List <Voyage> listeVoyage = new ArrayList();
+        int voyageId, optionId;
+        Voyage vDevis;
         String mail = Saisie.lireChaine("Veuillez vous identifier grâce à votre adresse e-mail:\n");
         Client c;
-        if ((c=cd.findByMail(mail)) != null){
+        if ((c=Service.clientAuthentification(mail)) != null){
             do{
-            choixrecherche = Saisie.lireChaine("Bienvenue" + c.getPrenom() + "\n"
+            choixrecherche = Saisie.lireChaine("Bienvenue " + c.getPrenom() + "\n"
                     + "Choix du voyage : 1-Par pays\n"
                     + "                  2-Par type - Séjour\n"
                     + "                  3-Par type - Circuit\n");
             }
-            while(!choixrecherche.equals("1")||!choixrecherche.equals("2")||!choixrecherche.equals("3"));       
+            while(!choixrecherche.equals("1")&&!choixrecherche.equals("2")&&!choixrecherche.equals("3"));       
             switch (choixrecherche){
                 case "1":
-                    listeVoyage = vd.findPays(Saisie.lireChaine("Nom de Pays?\n"));
+                    listeVoyage = Service.listVoyagePays(Saisie.lireChaine("Nom de Pays?\n"));
                     break;
                 case "2":
-                    listeVoyage = vd.findSejour();
+                    listeVoyage = Service.listSejour();
                     break;
                 case "3":
-                    listeVoyage = vd.findCircuit();
+                    listeVoyage = Service.listCircuit();
             }
             for(Voyage lVoyage : listeVoyage){
-                System.out.println(lVoyage.getId() + " " + lVoyage.toString());
+                System.out.println("**" + lVoyage.getId() + "** -- " + lVoyage.shortDescription() + "\n");
             }
             
+            voyageId = Integer.parseInt(Saisie.lireChaine("Indiquer l'identifiant du voyage choisi\n"));
+            vDevis = Service.voyageParId(voyageId);
+            System.out.println(vDevis.toString());
+            optionId = Integer.parseInt(Saisie.lireChaine("\nIndiquer le numéro de l'option choisie\n"));
         }
         else {
             System.out.println("Il n'y a pas de compte associé à cette adresse");

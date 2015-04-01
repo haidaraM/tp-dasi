@@ -48,6 +48,7 @@ public class Service {
     
     /**
      * Recupere les voyages se passant dans le pays dont le nom est passé en paramètre
+     * @param pays, le pays que l'on souhaite rechercher parmis les voyages.
      * @return 
      */
     public static List<Voyage> listVoyagePays(String pays){
@@ -55,6 +56,33 @@ public class Service {
         
         VoyageDAO vDao = new VoyageDAO();
         List<Voyage> liste = vDao.findPays(pays);
+        
+        JpaUtil.fermerEntityManager();
+        return liste;
+    }
+    /**
+     * Récupère les voyages de type séjour
+     * @return les séjours sous la forme d'une liste
+     */
+    public static List<Voyage> listSejour(){
+        JpaUtil.creerEntityManager();
+        
+        VoyageDAO vDao = new VoyageDAO();
+        List<Voyage> liste = vDao.findSejour();
+        
+        JpaUtil.fermerEntityManager();
+        return liste;
+    }
+    
+    /**
+     * Récupère tous les voyages de type Circuit
+     * @return les circuits sous la forme d'une liste
+     */
+    public static List<Voyage> listCircuit(){
+        JpaUtil.creerEntityManager();
+        
+        VoyageDAO vDao = new VoyageDAO();
+        List<Voyage> liste = vDao.findCircuit();
         
         JpaUtil.fermerEntityManager();
         return liste;
@@ -100,6 +128,17 @@ public class Service {
         dDao.create(dev);
         System.out.println(dev);
         JpaUtil.fermerEntityManager(); 
+    }
+    
+    public static Voyage voyageParId(int id){
+        JpaUtil.creerEntityManager();
+        
+        Voyage v;
+        VoyageDAO vDao = new VoyageDAO();
+        v=vDao.find(id);
+        
+        JpaUtil.fermerEntityManager(); 
+        return v;
     }
     
     
