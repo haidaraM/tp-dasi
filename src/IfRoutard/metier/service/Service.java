@@ -94,12 +94,14 @@ public class Service {
      */
     
     public static boolean ajouterNouveauClient(Client newClient){
+        boolean succes;
         JpaUtil.creerEntityManager();
         
         ClientDAO cDao = new ClientDAO();
-        cDao.create(newClient);
+        succes = cDao.create(newClient);
         
         JpaUtil.fermerEntityManager();
+        return succes;
         
     }
     /**
