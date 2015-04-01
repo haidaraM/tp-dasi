@@ -37,12 +37,13 @@ public class Sejour extends Voyage{
 
     @Override
     public String toString() {
+        int i = 0;
         String toReturn;
         toReturn = super.toString() +
                 "Résidence : " + this.getResidence() + 
                 "\n\n*Périodes et tarifs\n";
         for (Options option : options) {
-            toReturn += "Au départ de " + option.getLieuDepart() + " le " + option.getDateDepart() + " -Tarif : "
+            toReturn += i + " -- Au départ de " + option.getLieuDepart() + " le " + option.getDateDepart() + " -Tarif : "
                     +option.getTarif() + " -Transport aérien : " + option.getTypeTransport() + "\n";
         }
         return toReturn;
@@ -50,7 +51,7 @@ public class Sejour extends Voyage{
     
     @Override
     public String getType(){
-        return "Séjour\n (" + this.getDuree() + " jours, "+ this.getResidence() +")" ;
+        return "Séjour (" + this.getDuree() + " jours, "+ this.getResidence() +")" ;
     }
     
 

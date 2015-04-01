@@ -61,7 +61,7 @@ public class Circuit extends Voyage{
     
     @Override
     public String getType(){
-        return  "Circuit\n (" + this.getDuree() + " jours, " + this.getKilometrage() + " km," + this.getTransport() + ")";
+        return  "Circuit (" + this.getDuree() + " jours, " + this.getKilometrage() + " km," + this.getTransport() + ")";
     }
     
        

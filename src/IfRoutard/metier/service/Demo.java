@@ -8,9 +8,12 @@ package IfRoutard.metier.service;
 import IfRoutard.DAO.ClientDAO;
 import IfRoutard.DAO.VoyageDAO;
 import IfRoutard.metier.modele.Client;
+import IfRoutard.metier.modele.Devis;
+import IfRoutard.metier.modele.Options;
 import IfRoutard.metier.modele.Saisie;
 import IfRoutard.metier.modele.Voyage;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 
@@ -70,9 +73,11 @@ public class Demo {
     public static void CreerDevis(){
         ClientDAO cd = new ClientDAO();
         VoyageDAO vd = new VoyageDAO();
+        Devis d;
+        Options opt;
         String choixrecherche;
         List <Voyage> listeVoyage = new ArrayList();
-        int voyageId, optionId;
+        int voyageId, optionId, nbPersonnes;
         Voyage vDevis;
         String mail = Saisie.lireChaine("Veuillez vous identifier grâce à votre adresse e-mail:\n");
         Client c;
@@ -102,6 +107,15 @@ public class Demo {
             vDevis = Service.voyageParId(voyageId);
             System.out.println(vDevis.toString());
             optionId = Integer.parseInt(Saisie.lireChaine("\nIndiquer le numéro de l'option choisie\n"));
+            System.out.println("Option " + optionId + "choisie!\n");
+            opt = vDevis.getOptions().get(optionId);
+            nbPersonnes = Integer.parseInt(Saisie.lireChaine("Nombre de personnes au départ ? \n"));
+            d = new Devis(new Date(), nbPersonnes);
+            d.setClient(c);
+            d.setVoyage(vDevis);
+            d.setOptions(opt);
+            Service.creerDevis(d);
+            
         }
         else {
             System.out.println("Il n'y a pas de compte associé à cette adresse");
