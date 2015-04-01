@@ -25,6 +25,9 @@ import javax.persistence.Temporal;
  */
 @Entity
 public class Devis implements Serializable {
+    /**
+     * L'identifiant de l'entité dans la base de donnée. Cet identifiant est totalement gérée par JPA et aucune modification n'est possible dessus.
+     */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
@@ -39,14 +42,26 @@ public class Devis implements Serializable {
     @ManyToOne
     private Client client;
     
+    /**
+     * Le conseiller en charge du devis.
+     * @see Conseiller
+     */
     @JoinColumn(nullable = false)
     @ManyToOne
     private Conseiller conseiller;
     
+    /**
+     * L'option choisie par le client pour cet voyage.
+     * @see Options
+     */
     @JoinColumn(nullable = false)
     @OneToOne
     private Options options;
     
+    /**
+     * Le voyage pour lequel le devis a été émis.
+     * @see Voyage
+     */
     @JoinColumn(nullable = false)
     @OneToOne
     private Voyage voyage;

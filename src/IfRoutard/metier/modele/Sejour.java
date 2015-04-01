@@ -11,20 +11,33 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
 /**
- * Cette classe représente un voyage de type séjour
+ * Cette classe représente un voyage de type séjour.
  * @author mhaidara
  */
 @Entity
 @DiscriminatorValue("Sejour")
 public class Sejour extends Voyage{
-    
+    /**
+     * Residence (hotel, palace, cabane, chalet, bungalow) durant le séjour.
+     */
     private String residence;
 
-    public Sejour(String nom, int duree, String description, String code, String res) {
+    /**
+     * Constructeur paramétrée.
+     * @param nom
+     * @param duree
+     * @param description
+     * @param code
+     * @param resid
+     */
+    public Sejour(String nom, int duree, String description, String code, String resid) {
         super(nom, duree, description, code);
-        this.residence = res;
+        this.residence = resid;
     }
 
+    /**
+     * Constructeur sans paramètre.
+     */
     public Sejour() {
         super();
     }
@@ -45,7 +58,7 @@ public class Sejour extends Voyage{
     }
 
     /**
-     * Description détaillée du séjour.
+     * Retourne une description détaillée du séjour.
      * @return 
      */
     @Override

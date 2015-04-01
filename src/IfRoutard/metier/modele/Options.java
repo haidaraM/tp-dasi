@@ -17,11 +17,14 @@ import javax.persistence.Id;
 import javax.persistence.Temporal;
 
 /**
- *
+ * Représente une des options (départ, tarif) que le client peut choisir pour un voyage
  * @author elmhaidara
  */
 @Entity
 public class Options implements Serializable {
+    /**
+     * L'identifiant de l'entité dans la base de donnée. Cet identifiant est totalement gérée par JPA et aucune modification n'est possible dessus.
+     */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;

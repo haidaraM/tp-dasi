@@ -1,5 +1,6 @@
 package IfRoutard.metier.modele;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.*;
@@ -11,8 +12,10 @@ import javax.persistence.*;
  */
 
 @Entity
-public class Client {
-    
+public class Client implements Serializable{
+    /**
+     * L'identifiant de l'entité dans la base de donnée. Cet identifiant est totalement gérée par JPA et aucune modification n'est possible dessus.
+     */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
@@ -34,6 +37,10 @@ public class Client {
     
     private String numeroTelephone;
     
+    /**
+     * Liste des devis du client.
+     * @see Devis
+     */
     @OneToMany(mappedBy = "client")
     private List<Devis> devis = new ArrayList();
     

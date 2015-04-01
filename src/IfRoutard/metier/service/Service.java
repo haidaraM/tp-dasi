@@ -11,19 +11,19 @@ import IfRoutard.DAO.JpaUtil;
 import IfRoutard.DAO.VoyageDAO;
 import IfRoutard.metier.modele.Client;
 import IfRoutard.metier.modele.Devis;
-import IfRoutard.metier.modele.Options;
 import IfRoutard.metier.modele.Voyage;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
+ * Cette classe fournit un ensemble de services pour les futurs utilisateurs.
+ * Les services indispensables à l'application web ont été implémentées conformément au sujet.
+ * Les futurs utilisateurs devront veiller à l'utilisation correcte de ces services notamment les exceptions.
  * @author elmhaidara
  */
 public class Service {
     
     /**
-     * Permet de recupérer tous les voyages
+     * Recupere tous les voyages.
      * @return Liste de tous les voyages de la base
      */
     public static List<Voyage> listAllVoyages(){
@@ -36,6 +36,10 @@ public class Service {
         return liste;
     }
     
+    /**
+     * Liste de tous les clients de la base.
+     * @return 
+     */
     public static List<Client> listClient(){
         JpaUtil.creerEntityManager();
         
@@ -91,8 +95,8 @@ public class Service {
     /**
      * Ajoute un client dans la base de donnée.
      * @param newClient 
+     * @return Renvoie false si l'ajout s'est mal déroulée, true sinon
      */
-    
     public static boolean ajouterNouveauClient(Client newClient){
         boolean succes;
         JpaUtil.creerEntityManager();
@@ -120,9 +124,8 @@ public class Service {
     }
     
     /**
-     * Creer un devis pour un client avec son voyage qu'il a choisi et son option préferée
+     * Creer un devis pour un client.
      * @param dev
-     * 
      */
     public static void creerDevis(Devis dev){
         JpaUtil.creerEntityManager();
@@ -133,6 +136,11 @@ public class Service {
         JpaUtil.fermerEntityManager(); 
     }
     
+    /**
+     * Retourne l'id du voyage dont le nom est passée en paramètre.
+     * @param id
+     * @return 
+     */
     public static Voyage voyageParId(int id){
         JpaUtil.creerEntityManager();
         

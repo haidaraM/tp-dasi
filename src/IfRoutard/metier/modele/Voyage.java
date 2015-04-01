@@ -28,6 +28,9 @@ import javax.persistence.OneToMany;
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "DTYPE", discriminatorType = DiscriminatorType.STRING)
 public abstract class Voyage implements Serializable {
+    /**
+     * L'identifiant de l'entité dans la base de donnée. Cet identifiant est totalement gérée par JPA et aucune modification n'est possible dessus.
+     */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
@@ -41,9 +44,17 @@ public abstract class Voyage implements Serializable {
     @Column(unique = true)
     private String code;
     
+    /**
+     * Liste des pays dans lequel le voyage se passe.
+     * @see Pays
+     */
     @ManyToMany
     protected List<Pays> pays = new ArrayList();
     
+    /**
+     * Liste des options disponibles pour ce voyage.
+     * @see Options
+     */
     @OneToMany
     protected List<Options> options = new ArrayList();
     

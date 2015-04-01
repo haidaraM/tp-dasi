@@ -11,7 +11,7 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
 /**
- * Cette classe représente un voyage de type Circuit.
+ * <b> Circuit est la classe représentant un voyage de type Circuit. </b>
  * @author elmhaidara
  */
 @Entity
