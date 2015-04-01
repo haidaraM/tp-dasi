@@ -6,6 +6,8 @@
 package IfRoutard.metier.modele;
 
 import java.io.Serializable;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -111,17 +113,34 @@ public class Devis implements Serializable {
     
     @Override
     public String toString(){
-        return "-------------------------------------------------------------------------------\nDate : "
-                + date + "\n" + client.getPrenom() +" "+ client.getNom() + 
-                client.getAdresse() + "\n" + client.getNumeroTelephone() + 
-                "\n\nVotre conseiller pour ce voyage : "+conseiller.getPrenom() + 
-                " " + conseiller.getNom() +" ("+conseiller.getMail() + ")\n\nVotre voyage : "+
-                voyage.getNom() + " ." +this.getVoyage().getPays().get(0) + "\n" + 
-                voyage.getType() + "\n\nDépart : le" + options.getDateDepart() +" de " + options.getLieuDepart()+
-                "\nTransport aérien (susceptible d'être modifié) : " +options.getLieuDepart()+ 
-                "\n\n" + voyage.getDescription() + "\\nn----------------------\nNombre de personnes : " + nbPersonnes + 
-                "\nTarif par personne : " + options.getTarif() + " € \nTOTAL : " + options.getTarif()*nbPersonnes + " €"                    
+        String barre_verticale = "-------------------------------------------------------------------------------";
+        DateFormat format = new SimpleDateFormat("dd EEEE yyyy");
+        String la_date = "Date : " + format.format(date);
+        String le_client = client.toString();
+        String le_conseiller = "Votre conseiller pour ce voyage est : " + conseiller.toString();
+        String titre_voyage = "Votre voyage : "+voyage.getNom();
+        String le_type = voyage.getType();
+        String le_depart = "Depart : " +format.format(options.getDateDepart()) +" de " + options.getLieuDepart();
+        String le_transport = options.getTypeTransport();
+        String desc_voyage = voyage.getDescription();
+        String barre_verticale2 = "----------------------";
+        String les_personnes = "Nombre de personnes : "+nbPersonnes;
+        String le_tarif = "Tarif par personne : "+ options.getTarif() +" €";
+        String total = "TOTAL : " + nbPersonnes*options.getTarif() +" €";
+        return barre_verticale +"\n"+
+                la_date +"\n"+
+                le_client + "\n\n"+
+                le_conseiller +"\n\n"+
+                titre_voyage +"\n"+
+                le_type +"\n\n"+
+                le_depart +"\n"+
+                le_transport +"\n\n"+
+                desc_voyage +"\n\n"+
+                barre_verticale2 +"\n"+
+                les_personnes+"\n"+
+                le_tarif +"\n"+
+                total +"\n"
                 ;
         
-}
+    }
 }

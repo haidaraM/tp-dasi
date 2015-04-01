@@ -98,7 +98,7 @@ public class Service {
         
         DevisDAO dDao = new DevisDAO();
         dDao.create(dev);
-        
+        System.out.println(dev);
         JpaUtil.fermerEntityManager(); 
     }
     
