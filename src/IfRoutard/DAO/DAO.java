@@ -36,6 +36,7 @@ public abstract class DAO<T> {
 	 * Permet de créer une entrée dans la base de données
 	 * par rapport à un objet
 	 * @param obj
+     * @return 
 	 */
 	public abstract boolean create(T obj);
 	

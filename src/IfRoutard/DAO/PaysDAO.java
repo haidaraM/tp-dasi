@@ -9,7 +9,6 @@ import IfRoutard.metier.modele.Pays;
 import IfRoutard.metier.modele.Voyage;
 import java.util.ArrayList;
 import java.util.List;
-import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
 /**

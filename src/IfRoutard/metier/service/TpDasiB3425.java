@@ -1,18 +1,5 @@
 package IfRoutard.metier.service;
 
-import IfRoutard.DAO.ClientDAO;
-import IfRoutard.DAO.DevisDAO;
-import IfRoutard.DAO.JpaUtil;
-import IfRoutard.DAO.OptionsDAO;
-import IfRoutard.DAO.PaysDAO;
-import IfRoutard.DAO.VoyageDAO;
-import IfRoutard.metier.modele.Client;
-import IfRoutard.metier.modele.Devis;
-import IfRoutard.metier.modele.Options;
-import IfRoutard.metier.modele.Saisie;
-import IfRoutard.metier.modele.Voyage;
-import java.util.Date;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates

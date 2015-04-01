@@ -557,7 +557,7 @@ INSERT INTO Client (ID, ADRESSE, CIVILITE, MAIL, NOM, NUMEROTELEPHONE, PRENOM) v
 INSERT INTO Client (ID, ADRESSE, CIVILITE, MAIL, NOM, NUMEROTELEPHONE, PRENOM) values ( 556, '35 rue de Nancy, Le Port (La Réunion)', 'M.', 'jordan.ol-mnebhe@yahoo.com', 'OL MNEBHE', '0458808276', 'Jordan' );
 INSERT INTO Client (ID, ADRESSE, CIVILITE, MAIL, NOM, NUMEROTELEPHONE, PRENOM) values ( 557, '166 rue Léon Chomel, Saint-André (Réunion)', 'Mme', 'lourdes.biurgaois@hotmail.com', 'BIURGAOIS', '0399149427', 'Lourdes' );
 INSERT INTO Client (ID, ADRESSE, CIVILITE, MAIL, NOM, NUMEROTELEPHONE, PRENOM) values ( 558, '169 rue Frédéric Mistral, Bordeaux', 'Mme', 'eva.chona-meng-hame@gmail.com', 'CHONA-MENG-HAME', '0209026740', 'Eva' );
-INSERT INTO Client (ID, ADRESSE, CIVILITE, MAIL, NOM, NUMEROTELEPHONE, PRENOM) values ( 559, '79 rue Georges Méliès, Evry', 'Mme', 'camille.l'haneff@laposte.net', 'L'HANEFF', '0664130096', 'Camille' );
+INSERT INTO Client (ID, ADRESSE, CIVILITE, MAIL, NOM, NUMEROTELEPHONE, PRENOM) values ( 559, '79 rue Georges Méliès, Evry', 'Mme', 'camille.lhaneff@laposte.net', 'LHANEFF', '0664130096', 'Camille' );
 INSERT INTO Client (ID, ADRESSE, CIVILITE, MAIL, NOM, NUMEROTELEPHONE, PRENOM) values ( 560, '3 rue Lucette Et René Desgrand, Montrouge', 'M.', 'quentin.calara-cortes@yahoo.com', 'CALARA CORTES', '0658303337', 'Quentin' );
 INSERT INTO Client (ID, ADRESSE, CIVILITE, MAIL, NOM, NUMEROTELEPHONE, PRENOM) values ( 561, '38 rue de Saint-Herblain, Calais', 'M.', 'tbouchot9432@hotmail.com', 'BOUCHOT', '0721173882', 'Thai Hoang' );
 INSERT INTO Client (ID, ADRESSE, CIVILITE, MAIL, NOM, NUMEROTELEPHONE, PRENOM) values ( 562, '170 rue Mozart, Narbonne', 'Mme', 'cyrille.besitella@outlook.com', 'BESITELLA', '0983988492', 'Cyrille' );

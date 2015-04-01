@@ -25,9 +25,9 @@ public class Demo {
     
     public static void lancerDemo(){
         
-        String consignes = "\n*********************Commandes disponibl*********\n"
-                         + "CreerClient -- ListerClients -- CreerDevis --  Quit\n"
-                         + "***************************************************\n";
+        String consignes = "\n*********************Commandes disponibles*********\n"
+                         +   "CreerClient -- ListerClients -- CreerDevis --  Quit\n"
+                         +   "***************************************************\n";
         
         String commande = Saisie.lireChaine(consignes);
         while(!"Quit".equals(commande))
@@ -58,8 +58,16 @@ public class Demo {
         String adresse = Saisie.lireChaine("Adresse?\n");
         String tel = Saisie.lireChaine("Numéro de téléphone?\n");
         Client c = new Client(nom, prenom, civilite, tel, mail, adresse);
-        Service.ajouterNouveauClient(c);
-        System.out.println("Client crée !\n"); 
+        boolean succes = Service.ajouterNouveauClient(c);
+        String aAfficher = ("Expediteur : ifroutard@monde.fr\n"
+                        +  "Pour : " + mail + "\nCorps : \nBonjour " + prenom +", \n" );
+        if (succes){
+           aAfficher += "Nous vous confirmons votre inscription à l'agence IF'Routard. Votre numero de client est :" + c.getId();
+        }
+        else{
+           aAfficher += "Votre inscription à l'agence IF'Routard a échouée. Merci de recommencer ultérieurement";
+        }
+        System.out.println(aAfficher);
     }
     
     public static void ListerClients(){
@@ -115,6 +123,7 @@ public class Demo {
             d.setVoyage(vDevis);
             d.setOptions(opt);
             Service.creerDevis(d);
+            System.out.println(d);
             
         }
         else {

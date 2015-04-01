@@ -5,12 +5,9 @@
  */
 package IfRoutard.DAO;
 
-import IfRoutard.metier.modele.Client;
 import IfRoutard.metier.modele.Conseiller;
 import IfRoutard.metier.modele.Devis;
-import java.util.ArrayList;
 import java.util.List;
-import javax.persistence.EntityManager;
 import javax.persistence.Query;
 /**
  *
