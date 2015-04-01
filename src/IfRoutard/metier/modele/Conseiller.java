@@ -59,6 +59,11 @@ public class Conseiller implements Serializable {
         return mail;
     }
 
-     
+    @Override
+    public String toString() {
+        return nom +" "+prenom +"(" + mail+")";
+    }
+
+    
 
 }
