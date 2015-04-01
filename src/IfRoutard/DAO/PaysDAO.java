@@ -36,10 +36,18 @@ public class PaysDAO extends DAO<Pays>{
     }
 
     @Override
-    public void create(Pays obj) {
+    public boolean create(Pays obj) {
+        boolean succes;
         JpaUtil.ouvrirTransaction();
-        em.persist(obj);
+        try{
+            em.persist(obj);
+            succes = true;
+        }
+        catch(Exception e){
+            succes = false;
+        }
         JpaUtil.validerTransaction();
+        return succes;
     }
 
     @Override

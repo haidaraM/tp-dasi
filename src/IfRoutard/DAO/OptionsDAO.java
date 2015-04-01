@@ -37,10 +37,18 @@ public class OptionsDAO extends DAO<Options> {
     }
 
     @Override
-    public void create(Options obj) {
+    public boolean create(Options obj) {
+        boolean succes;
         JpaUtil.ouvrirTransaction();
-        em.persist(obj); 
+        try{
+            em.persist(obj);
+            succes = true;
+        }
+        catch(Exception e){
+            succes = false;
+        }
         JpaUtil.validerTransaction();
+        return succes;
     }
 
     @Override

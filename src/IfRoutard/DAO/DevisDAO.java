@@ -37,8 +37,8 @@ public class DevisDAO extends DAO<Devis>{
     }
 
     @Override
-    public void create(Devis devis) {
-        
+    public boolean create(Devis devis) {
+        boolean succes;
         // recherche du conseiller avec le nombre min de client
         Query q = em.createQuery("Select con From Conseiller con");
         List<Conseiller> liste_conseiller = q.getResultList();
@@ -53,8 +53,15 @@ public class DevisDAO extends DAO<Devis>{
         devis.setConseiller(con_min);
         
         JpaUtil.ouvrirTransaction();
-        em.persist(devis); 
+        try{
+            em.persist(devis);
+            succes = true;
+        }
+        catch(Exception e){
+            succes = false;
+        }
         JpaUtil.validerTransaction();
+        return succes;
     }
 
     @Override

@@ -40,10 +40,18 @@ public class ClientDAO extends DAO<Client> {
     }
 
     @Override
-    public void create(Client obj) {
+    public boolean create(Client obj) {
+        boolean succes;
         JpaUtil.ouvrirTransaction();
-        em.persist(obj); 
+        try{
+        em.persist(obj);
+        succes = true;
+        }
+        catch(Exception e){
+        succes = false;
+        }
         JpaUtil.validerTransaction();
+        return succes;
     }
     
     @Override

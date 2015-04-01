@@ -37,7 +37,9 @@ public abstract class DAO<T> {
 	 * par rapport à un objet
 	 * @param obj
 	 */
-	public abstract void create(T obj);
+	public abstract boolean create(T obj){
+            boolean succes;
+        }
 	
 	/**
 	 * Permet de mettre à jour les données d'une entrée dans la base 

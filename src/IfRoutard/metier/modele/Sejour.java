@@ -45,6 +45,7 @@ public class Sejour extends Voyage{
         for (Options option : options) {
             toReturn += i + " -- Au départ de " + option.getLieuDepart() + " le " + option.getDateDepart() + " -Tarif : "
                     +option.getTarif() + " -Transport aérien : " + option.getTypeTransport() + "\n";
+            i++;
         }
         return toReturn;
     }

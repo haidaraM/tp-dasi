@@ -93,13 +93,14 @@ public class Service {
      * @param newClient 
      */
     
-    public static void ajouterNouveauClient(Client newClient){
+    public static boolean ajouterNouveauClient(Client newClient){
         JpaUtil.creerEntityManager();
         
         ClientDAO cDao = new ClientDAO();
         cDao.create(newClient);
         
         JpaUtil.fermerEntityManager();
+        
     }
     /**
      * Verifie si le mail passé en paramètre correspond à un client. Par soucis de simplicité, on ne gére pas le mot de passe.

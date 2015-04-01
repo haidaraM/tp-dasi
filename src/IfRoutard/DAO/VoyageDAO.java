@@ -37,7 +37,6 @@ public class VoyageDAO extends DAO<Voyage> {
         Query q = em.createQuery("Select v FROM Voyage v join v.pays p where p.nom like :pays_nom");
         q.setParameter("pays_nom", "%" + pays + "%");
         listVoyage = (List<Voyage>) q.getResultList();
-        listVoyage = orderByNom(true, listVoyage);
         return listVoyage;
     }
     
@@ -45,7 +44,6 @@ public class VoyageDAO extends DAO<Voyage> {
         List<Voyage> listVoyage = new ArrayList();
         Query q = em.createQuery("Select v FROM Sejour v");
         listVoyage = (List<Voyage>) q.getResultList();
-        listVoyage = orderByNom(true, listVoyage);
         return listVoyage;
     }
     
@@ -53,56 +51,22 @@ public class VoyageDAO extends DAO<Voyage> {
         List<Voyage> listVoyage = new ArrayList();
         Query q = em.createQuery("Select v FROM Circuit v");
         listVoyage = (List<Voyage>) q.getResultList();
-        listVoyage = orderByNom(true, listVoyage);
         return listVoyage;
     }
-    /**
-     * 
-     * @param ascDesc Si 0, la liste sera triée par ordre alphabétique, si 1, l'ordre inverse
-     * @param tochange La liste que l'on souhaite inverser
-     * @return La liste ordonée par nom dans l'ordre alphabétique/inverse
-     */
-    private List<Voyage> orderByNom(final boolean ascDesc, List<Voyage> tochange){
-        Collections.sort(tochange, new Comparator<Voyage>(){
-            @Override
-            public int compare(Voyage o1, Voyage o2) {
-                if(ascDesc){
-                    return o1.getNom().compareToIgnoreCase(o2.getNom());
-                }
-                else{
-                    return -(o1.getNom().compareToIgnoreCase(o2.getNom()));
-                }      
-            }
-        }
-        );
-        return tochange;
-    }
-    
-    
-    
-    public List<Voyage> orderByType(final boolean ascDesc, List<Voyage> tochange){
-    Collections.sort(tochange, new Comparator<Voyage>(){
-            @Override
-            public int compare(Voyage o1, Voyage o2) {
-                if(ascDesc){
-                    return o1.getNom().compareToIgnoreCase(o2.getNom());
-                }
-                else{
-                    return -(o1.getNom().compareToIgnoreCase(o2.getNom()));
-                }      
-            }
-        }
-        );
-        return tochange;
-    }
-    
-    
 
     @Override
-    public void create(Voyage obj) {
+    public boolean create(Voyage obj) {
+        boolean succes;
         JpaUtil.ouvrirTransaction();
-        em.persist(obj);
+        try{
+            em.persist(obj);
+            succes = true;
+        }
+        catch(Exception e){
+            succes = false;
+        }
         JpaUtil.validerTransaction();
+        return succes;
     }
 
     @Override
@@ -122,7 +86,6 @@ public class VoyageDAO extends DAO<Voyage> {
       List<Voyage> listeVoyage = new ArrayList();
       Query q = em.createQuery("Select v FROM Voyage v" );
       listeVoyage = (List<Voyage>) q.getResultList();
-      listeVoyage = orderByNom(true, listeVoyage);
       return listeVoyage;
     }
     

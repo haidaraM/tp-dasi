@@ -25,9 +25,9 @@ public class Demo {
     
     public static void lancerDemo(){
         
-        String consignes = "\n*********************Commandes disponibles*************************\n"
-                         + "CreerClient -- ListerClients -- CreerDevis -- AfficherDevis -- Quit\n"
-                         + "*******************************************************************\n";
+        String consignes = "\n*********************Commandes disponibl*********\n"
+                         + "CreerClient -- ListerClients -- CreerDevis --  Quit\n"
+                         + "***************************************************\n";
         
         String commande = Saisie.lireChaine(consignes);
         while(!"Quit".equals(commande))
@@ -107,7 +107,7 @@ public class Demo {
             vDevis = Service.voyageParId(voyageId);
             System.out.println(vDevis.toString());
             optionId = Integer.parseInt(Saisie.lireChaine("\nIndiquer le numéro de l'option choisie\n"));
-            System.out.println("Option " + optionId + "choisie!\n");
+            System.out.println("Option " + optionId + " choisie!\n");
             opt = vDevis.getOptions().get(optionId);
             nbPersonnes = Integer.parseInt(Saisie.lireChaine("Nombre de personnes au départ ? \n"));
             d = new Devis(new Date(), nbPersonnes);
