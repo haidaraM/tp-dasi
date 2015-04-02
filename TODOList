@@ -13,7 +13,7 @@ services
 //Création d'un devis
 //-UML
 //-AffichageDevis
--Maj Interface graphique
--Maj ICARs
+//Maj Interface graphique
+//Maj ICARs
 -CompteRendu
 -------------------------------------------------------------------------------

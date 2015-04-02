@@ -40,5 +40,6 @@ Web – Résultats,Trier par Nom/Pays/Durée/Type,Liste des voyages – en tête
 ,Avoir des détails pour un voyage,Liste puis bouton « Détails du voyage »,Sélection puis click,Accès à la page Web – Voyage
 ,,,,
 Web – Voyage,,,,
+,Changer le nombre de participants,Stepper,Click,Mise à jour du total
 ,Établir un devis,Liste des options puis bouton « Établir un devis »,Sélection (option) puis click,Envoi mail (affichage écran) et création du devis
 ,Revenir à la liste,Bouton « Retour à la recherche »,Click,Page résultats
