@@ -53,7 +53,6 @@ commentstyle=\color{grey}
 
 \bf{TP DASI : If'Routard}
 ~\newline~\newline \begin{large} Compte Rendu\end{large}
-
 \end{LARGE}
 \end{center}
 
@@ -63,7 +62,7 @@ commentstyle=\color{grey}
 \section{Modèle de domaine}
 À la suite de l'analyse des besoins exprimés par le sujet, nous avons établis le modèle de domaine suivant :
 \begin{center}
-\includegraphics[scale = 0.9]{./Pictures/ModeleDomaine.png}
+\includegraphics[scale = 0.75]{./Pictures/ModeleDomaine.png}
 \newline
 Modèle de domaine
 \label{fig:ModeleDomaine}
@@ -112,7 +111,7 @@ Créateur - Fiche Voyage
 \paragraph{Créateur - Liste Pays}
 Cette fenêtre est utilisée pour ajouter ou modifier plus simplement les pays concernés par un voyage lors de sa création ou de sa modification : elle permet de s'assurer que les pays ajouter sont bien existants dans notre base de donnée et d’éviter les fautes de frappe. Elle se présente sous la forme suivante:
 \begin{center}
-\includegraphics[scale = 0.5]{../Conception_graphique/png_Pour_CR/Createur-40-Liste_Pays.png}
+\includegraphics[scale = 0.45]{../Conception_graphique/png_Pour_CR/Createur-40-Liste_Pays.png}
 \newline
 Créateur - Liste Pays
 \label{fig:Cr-Liste Pays}
@@ -204,7 +203,7 @@ Web - Devis
 \label{fig:Devis}
 \end{center} 
 
-\subsubsection{ICARs}
+\subsubsection{ICARs - Interface web}
 Cette partie synthétise les ICARs de l'interface Web.
 \begin{center}
 \begin{footnotesize}
@@ -229,6 +228,83 @@ Web – Devis &Revenir à la recherche de voyage & Bouton \emph{Retour au catalo
 \end{center}
 
 \section{Services}
+Afin de permettre la suite du TP et le développement des IHM, nous avons développé et testé les services nécessaires au fonctionnement de l'interface web dans la classe service.java. Cette classe comporte notamment les fonctions permettant de lister l'ensemble des clients, l'ensemble de voyage, des circuits, des séjours, de rechercher des voyages par pays ou par leur identifiant(utilisé principalement dans la démonstration).  Elle contient aussi les fonctions nécessaires à ajouter un nouveau client, authentifier un client existant ou encore créer un devis. 
 
+\newpage
+\appendix
+\section{Package DAO}
 
+\subsection*{ClientDAO.java}
+\lstinputlisting{../src/IfRoutard/DAO/ClientDAO.java}
+\newpage
+
+\subsection*{DAO.java}
+\lstinputlisting{../src/IfRoutard/DAO/DAO.java}
+\newpage
+
+\subsection*{DevisDAO.java}
+\lstinputlisting{../src/IfRoutard/DAO/DevisDAO.java}
+\newpage
+
+\subsection*{OptionsDAO.java}
+\lstinputlisting{../src/IfRoutard/DAO/OptionsDAO.java}
+\newpage
+
+\subsection*{PaysDAO.java}
+\lstinputlisting{../src/IfRoutard/DAO/PaysDAO.java}
+\newpage
+
+\subsection*{VoyageDAO.java}
+\lstinputlisting{../src/IfRoutard/DAO/VoyageDAO.java}
+\newpage
+
+\section{Package metier}
+\subsection{Package modele}
+
+\subsection*{Circuit.java}
+\lstinputlisting{../src/IfRoutard/metier/modele/Circuit.java}
+\newpage
+
+\subsection*{Client.java}
+\lstinputlisting{../src/IfRoutard/metier/modele/Client.java}
+\newpage
+
+\subsection*{Conseiller.java}
+\lstinputlisting{../src/IfRoutard/metier/modele/Conseiller.java}
+\newpage
+
+\subsection*{Devis.java}
+\lstinputlisting{../src/IfRoutard/metier/modele/Devis.java}
+\newpage
+
+\subsection*{Options.java}
+\lstinputlisting{../src/IfRoutard/metier/modele/Options.java}
+\newpage
+
+\subsection*{Pays.java}
+\lstinputlisting{../src/IfRoutard/metier/modele/Pays.java}
+\newpage
+
+\subsection*{Sejour.java}
+\lstinputlisting{../src/IfRoutard/metier/modele/Sejour.java}
+\newpage
+
+\subsection*{Voyage.java}
+\lstinputlisting{../src/IfRoutard/metier/modele/Voyage.java}
+\newpage
+
+\subsection{Package service} 
+
+\subsection*{Service.java}
+\lstinputlisting{../src/IfRoutard/metier/service/Service.java}
+\newpage
+
+\subsection*{TpDasiB3425.java}
+\lstinputlisting{../src/IfRoutard/metier/service/TpDasiB3425.java}
+\newpage
+
+\subsection*{Demo.java}
+Cette classe est celle utilisée pour la démonstration des services implémentés.
+\lstinputlisting{../src/IfRoutard/metier/service/Demo.java}
+\newpage
 \end{document}

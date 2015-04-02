@@ -20,7 +20,7 @@ public class ClientDAO extends DAO<Client> {
     public Client find(long id) {
        Client cl = em.find(Client.class, id);
        if(cl != null){
-           // on coupe le lien avec la base de donnée
+           // on coupe le lien avec la base de donnee
            em.detach(cl);
        }      
        return cl;
