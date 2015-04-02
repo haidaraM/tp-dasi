@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package IfRoutard.metier.modele;
 
 import java.text.DateFormat;
@@ -11,7 +6,7 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
 /**
- * Cette classe représente un voyage de type séjour.
+ * <b> Sejour est la classe représentant un voyage de type Sejour. </b>
  * @author mhaidara
  */
 @Entity
@@ -24,11 +19,11 @@ public class Sejour extends Voyage{
 
     /**
      * Constructeur paramétrée.
-     * @param nom
-     * @param duree
-     * @param description
-     * @param code
-     * @param resid
+     * @param nom Le nom du voyage
+     * @param duree La durée en jour du séjour
+     * @param description Description détaillée du séjour
+     * @param code  Code unique
+     * @param resid Residence du séjour
      */
     public Sejour(String nom, int duree, String description, String code, String resid) {
         super(nom, duree, description, code);
@@ -51,7 +46,7 @@ public class Sejour extends Voyage{
     
     /**
      * Met à jour la résidence dans lequel sur le séjour se déroulera.
-     * @param residence 
+     * @param residence La nouvelle résidence
      */
     public void setResidence(String residence) {
         this.residence = residence;

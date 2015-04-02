@@ -14,5 +14,11 @@ hs_err_pid*
 
 # others files
 nbproject/private/
-
+createDDL.jdbc
+CompteRendu/CRDASI.toc
+CompteRendu/CRDASI.gz
+CompteRendu/CRDASI.aux
+CompteRendu/CRDASI.synctex.gz
+CompteRendu/CRDASI.log
+CompteRendu/CRDASI.out
 /dist/

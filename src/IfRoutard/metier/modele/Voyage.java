@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package IfRoutard.metier.modele;
 
 import java.io.Serializable;
@@ -21,7 +16,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
 /**
- *
+ * <b>Voyage est classe abstraite représentant un voyage proposé par l'agence de voyage </b>.
  * @author ebai
  */
 @Entity
@@ -35,12 +30,24 @@ public abstract class Voyage implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     
+    /**
+     * Le nom du voyage.
+     */
     private String nom;
     
+    /**
+     * Le durée en jour du voyage.
+     */
     private int duree;
     
+    /**
+     * Une description détaillée du voyage.
+     */
     private String description;
     
+    /**
+     * Un code unique pour le voyage.
+     */
     @Column(unique = true)
     private String code;
     
@@ -58,6 +65,13 @@ public abstract class Voyage implements Serializable {
     @OneToMany
     protected List<Options> options = new ArrayList();
     
+    /**
+     * Constructeur paramétrée
+     * @param nom
+     * @param duree
+     * @param description
+     * @param code
+     */
     public Voyage(String nom, int duree, String description, String code) {
         this.nom = nom;
         this.duree = duree;
@@ -65,7 +79,10 @@ public abstract class Voyage implements Serializable {
         this.code = code;       
     }
     
-     public Voyage() {
+    /**
+     * Constructeur sans paramètre.
+     */
+    public Voyage() {
     }
     /**
      * Retourne un code unique du voyage pour un voyage.
@@ -198,8 +215,10 @@ public abstract class Voyage implements Serializable {
                 this.getDescription() + "\n\n*Fiche voyage\n";
     }
     
-    public String getType(){
-        return "";
-    }    
+    /**
+     * Retourne une description succincte du voyage
+     * @return 
+     */
+    public abstract String getType(); 
        
 }
