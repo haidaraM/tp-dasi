@@ -1,5 +1,17 @@
 package IfRoutard.metier.service;
 
+import IfRoutard.DAO.ClientDAO;
+import IfRoutard.DAO.DevisDAO;
+import IfRoutard.DAO.JpaUtil;
+import IfRoutard.DAO.OptionsDAO;
+import IfRoutard.DAO.VoyageDAO;
+import IfRoutard.metier.modele.Client;
+import IfRoutard.metier.modele.Devis;
+import IfRoutard.metier.modele.Options;
+import IfRoutard.metier.modele.Voyage;
+import java.util.Date;
+import java.util.List;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -17,31 +29,21 @@ public class TpDasiB3425 {
      */
     public static void main(String[] args) {
            
-        //JpaUtil.creerEntityManager();
+        
         
         Demo.lancerDemo();
         
-        /*DevisDAO dDAO = new DevisDAO();
+/*      JpaUtil.creerEntityManager();
+        DevisDAO dDAO = new DevisDAO();
         ClientDAO cDAO = new ClientDAO();
-        VoyageDAO vDAO = new VoyageDAO();
-        Voyage v = vDAO.find(173); // je prends un voyage au piff avec au moins une option
-        Client c = cDAO.findByMail("mgoyat@yahoo.com"); // un client au piff
-        Options o = v.getOptions().get(0); // la premiere option
-        Devis dev = new Devis(new Date(), 2); // la date courante avec deux personnes
-        
-        OptionsDAO oDao = new OptionsDAO();
-        Options op = new Options("Bamako", new Date(), 454, "Bateau");
-        
-        dev.setOptions(op);
-        dev.setClient(c);
-        dev.setVoyage(v);
-        
-  
-        dDAO.create(dev); */
-       
+        Client c = cDAO.findByMail("ali.villen@hotmail.com"); // un client au piff
+        List<Devis> dev = c.getDevis();
+        for (Devis dev1 : dev) {
+            System.out.println(dev);
+        }
 
         
-        //JpaUtil.fermerEntityManager();
+        JpaUtil.fermerEntityManager();*/
     }
     
 }
