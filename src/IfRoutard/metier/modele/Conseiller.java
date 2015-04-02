@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 /**
- * Représente un conseiller qui suivra le client durant l'établissement de son devis jusqu'a son retour de voyage.
+ * Représente un conseiller de l'agence de voyage
  * @author ebai
  */
 @Entity
