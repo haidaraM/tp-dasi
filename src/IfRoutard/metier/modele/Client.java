@@ -7,7 +7,7 @@ import javax.persistence.*;
 
 
 /**
- * Cette classe répresente les clients de l'agence de voyage.
+ * <b> Cette classe Client répresente les clients de l'agence de voyage </b>.
  * @author ebai
  */
 
@@ -20,12 +20,21 @@ public class Client implements Serializable{
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     
+    /**
+     * Le nom du client.
+     */
     @Column(nullable = false)
     private String nom;
     
+    /**
+     * Le prénom du client.
+     */
     @Column(nullable = false)
     private String prenom;
     
+    /**
+     * La civilité du client ().
+     */
     @Column(nullable = false)
     private String civilite;
     
@@ -44,9 +53,21 @@ public class Client implements Serializable{
     @OneToMany(mappedBy = "client")
     private List<Devis> devis = new ArrayList();
     
+    /**
+     * Constructeur sans paramètre.
+     */
     public Client() {
     } 
     
+    /**
+     * Constructeur paramétrée
+     * @param Nom Nom du client 
+     * @param Prenom Prénom du client
+     * @param civilite Civilité du client : M. ou Mme
+     * @param numero Numéro de téléphone du client
+     * @param mail Adresse mail unique du client
+     * @param adresse Adresse complète du client
+     */
     public Client(String Nom, String Prenom, String civilite, String numero, String mail, String adresse) {
         this.nom = Nom;
         this.prenom = Prenom;
@@ -74,7 +95,7 @@ public class Client implements Serializable{
 
     /**
      * Met à jour le nom du client.
-     * @param Nom 
+     * @param Nom Nouveau nom 
      */
     public void setNom(String Nom) {
         this.nom = Nom;
@@ -90,7 +111,7 @@ public class Client implements Serializable{
 
     /**
      * Met à jour le prénom du client.
-     * @param Prenom 
+     * @param Prenom Nouveau prénom
      */
     public void setPrenom(String Prenom) {
         this.prenom = Prenom;
@@ -106,7 +127,7 @@ public class Client implements Serializable{
 
     /**
      * Met à jour la civilité du client.
-     * @param civilite 
+     * @param civilite Nouvelle civilité
      */
     public void setCivilite(String civilite) {
         this.civilite = civilite;
@@ -122,7 +143,7 @@ public class Client implements Serializable{
 
     /**
      * Met à jour le numéro de téléphone du client.
-     * @param numeroTelephone 
+     * @param numeroTelephone Nouveau numéro de téléphone
      */
     public void setNumeroTelephone(String numeroTelephone) {
         this.numeroTelephone = numeroTelephone;
@@ -130,7 +151,7 @@ public class Client implements Serializable{
 
     /**
      * Met à jour l'adresse du client.
-     * @param Adresse 
+     * @param Adresse Nouvelle adresse
      */
     public void setAdresse(String Adresse) {
         this.adresse = Adresse;
