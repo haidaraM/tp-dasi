@@ -23,20 +23,18 @@ Créateur – Liste Pays,&,Trier par Nom,&,Liste des Pays – en tête,&,Click,&
 ,,,,,,,,,
 ,,,,,,,,,
 Application Web,,,,,,,,,
-Web – Accueil,,Créer un compte,,Bouton « Créer Votre Compte »,,Click,,Accès à la page Web – Création Compte,
-,,Se connecter,,Zone de texte puis bouton « Connexion »,,Entrée clavier puis click,,Accès à la page Web – Recherche Voyage,
-,,,,,,,,,
-Web – Création Compte,,Créer un compte,,Zones de texte puis bouton « Créer votre compte »,,Entrées clavier puis click,,Retour à la page Web -Accueil et création du compte – envoi mail,
-,,,,,,,,,
-Web – Recherche Voyage,,Recherche par pays,,Zone de texte puis bouton « Rechercher »,,Entrée clavier puis click,,Accès à la page Web – Résultats,
-,,Recherche par type,,ComboBox puis bouton « Rechercher »,,Sélection puis click,,Accès à la page Web – Résultats,
-,,Se déconnecter,,Bouton « Déconnexion »,,Click,,Retour à la page Web -Accueil,
-,,,,,,,,,
-Web – Résultats,,Trier par Nom/Pays/Durée/Type,,Liste des voyages – en tête,,Click,,Mise à jour de la liste des résultats,
-,,Effectuer une nouvelle recherche,,Bouton « Nouvelle Recherche »,,Click,,Accès à la page Web – Recherche Voyage,
-,,Avoir des détails pour un voyage,,Liste puis bouton « Détails du voyage »,,Sélection puis click,,Accès à la page Web – Voyage,
-,,,,,,,,,
-Web – Voyage,,,,,,,,,
-,,Changer le nombre de participants,,Stepper,,Click,,Mise à jour du total,
-,,Établir un devis,,Liste des options puis bouton « Établir un devis »,,Sélection (option) puis click,,Envoi mail (affichage écran) et création du devis,
-,,Revenir à la liste,,Bouton « Retour à la recherche »,,Click,,Page résultats,
+Fenêtre,&,Intention,&,Contrôle,&,Action,&,Réponse,\\ \hline
+Web – Accueil,&,Créer un compte,&,Bouton « Créer Votre Compte »,&,Click,&,Accès à la page Web – Création Compte,\\ \hline
+,&,Se connecter,&,Zone de texte puis bouton « Connexion »,&,Entrée clavier puis click,&,Accès à la page Web – Recherche Voyage,\\ \hline
+Web – Création Compte,&,Créer un compte,&,Zones de texte puis bouton « Créer votre compte »,&,Entrées clavier puis click,&,Retour à la page Web -Accueil et création du compte – envoi mail,\\ \hline
+Web – Recherche Voyage,&,Recherche par pays,&,Zone de texte puis bouton « Rechercher »,&,Entrée clavier puis click,&,Accès à la page Web – Résultats,\\ \hline
+,&,Recherche par type,&,ComboBox puis bouton « Rechercher »,&,Sélection puis click,&,Accès à la page Web – Résultats,\\ \hline
+,&,Se déconnecter,&,Bouton « Déconnexion »,&,Click,&,Retour à la page Web -Accueil,\\ \hline
+Web – Résultats,&,Trier par Nom/Pays/Durée/Type,&,Liste des voyages – en tête,&,Click,&,Mise à jour de la liste des résultats,\\ \hline
+,&,Effectuer une nouvelle recherche,&,Bouton « Nouvelle Recherche »,&,Click,&,Accès à la page Web – Recherche Voyage,\\ \hline
+,&,Avoir des détails pour un voyage,&,Liste puis bouton « Détails du voyage »,&,Sélection puis click,&,Accès à la page Web – Voyage,\\ \hline
+Web – Voyage,&,Changer le nombre de participants,&,Stepper,&,Click,&,Mise à jour du total,\\ \hline
+,&,Établir un devis,&,Liste des options puis bouton « Établir un devis »,&,Sélection (option) puis click,&,Envoi mail (affichage écran) et création du devis,\\ \hline
+,&,Revenir à la liste,&,Bouton « Retour à la recherche »,&,Click,&,Page résultats,\\ \hline
+Web – Devis,&,Revenir à la recherche de voyage,&,Bouton « Retour au catalogue »,&,Click,&,Accès à la page Web – Recherche Voyage,\\ \hline
+,,,,,,,&,,

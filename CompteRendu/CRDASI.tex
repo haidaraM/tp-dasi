@@ -1,10 +1,10 @@
-\documentclass[12pt]{article}
+\documentclass[11pt]{article}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}  
 \usepackage[francais]{babel}   
 \usepackage{fancyhdr}
-\usepackage[top=1.5cm,bottom=3.5cm,left=2.5cm,right=2.5cm]{geometry}
+\usepackage[top=1.5cm,bottom=3cm,left=2.5cm,right=2.5cm]{geometry}
 \usepackage{lmodern}
 \usepackage{listings}
 \usepackage{color}
@@ -48,25 +48,22 @@ commentstyle=\color{grey}
 
 \begin{center}
 \begin{LARGE}
-\begin{bfseries}
 
 \vspace{1\baselineskip}
 
-\Titre
+\bf{TP DASI : If'Routard}
 ~\newline~\newline \begin{large} Compte Rendu\end{large}
-\end{bfseries}
+
 \end{LARGE}
 \end{center}
 
 \tableofcontents
 
-\section*{Introduction}
-Lors de ce Tp, nous avons travaillé autours de la création d'une application pour agence de voyage. Cette application est divisée en deux interfaces principales qui sont une IHM client fenêtrée utilisée par les créateurs de voyage pour gérer leur agence et une IHM web permettant aux aux clients de consulter le catalogue des voyages proposés afin d'établir un devis. L'objectif de la première période de TP est de spécifier les IHM et réaliser l'architecture des données et des services nécessaires au fonctionnement de l'application dans les cas d'usages décris par le sujet.
 
 \section{Modèle de domaine}
 À la suite de l'analyse des besoins exprimés par le sujet, nous avons établis le modèle de domaine suivant :
 \begin{center}
-\includegraphics[scale = 0.7]{./Pictures/ModeleDomaine.png}
+\includegraphics[scale = 0.9]{./Pictures/ModeleDomaine.png}
 \newline
 Modèle de domaine
 \label{fig:ModeleDomaine}
@@ -125,11 +122,9 @@ Créateur - Liste Pays
 Cette partie synthétise dans un tableau les ICARs de l'application client fenêtré.\\
 \begin{center}
 \begin{footnotesize}
-
-
 \begin{supertabular}{|p{2cm}|p{3cm}|p{3.5cm}|p{2cm}|p{4cm}|}
 \hline         
-Fenêtre & Intention & Contrôle & Action & Réponse \\ \hline
+\bf{Fenêtre} & \bf{Intention} & \bf{Contrôle} & \bf{Action} & \bf{Réponse} \\ \hline
 Créateur - Connexion & Se connecter à l'application & Zone de texte et Bouton "connexion" & Entrée clavier puis click & Accès à la fenêtre Créateur – Accueil   \\ \hline
 & Quitter l'application & Bonton \emph{Quitter} & Click & Fermeture de l'application \\ \hline
 Créateur – Accueil & Travailler sur les voyages & Bouton \emph{Voyages} & Click & Accès à la fenêtre Créateur – Liste Voyage \\ \hline
@@ -193,13 +188,45 @@ Web - Résultats
 
 \paragraph{Web - Voyage}
 Cette page est affichée lorsque le client demande des détails sur l'un des voyages de la liste de résultats. Elle contient toutes les informations concernant le voyage ainsi que la liste des options de départ correspondantes. Sur cette page, en choisissant une option et un nombre de participant, le client peut générer un devis qui sera affiché et envoyé par e-mail. Il peut aussi revenir à la liste de résultats qu'il a obtenu précédemment. Elle se présente sous la forme suivante:
+\begin{center}
 \includegraphics[scale = 0.4]{../Conception_graphique/png_Pour_CR/Web-40-Voyage.png}
 \newline
 Web - Voyage
 \label{fig:Voyage}
 \end{center}
 
+\paragraph{Web - Devis}
+Une fois la demande effectuée, le devis s'affiche dans la fenêtre suivante. À partir de cette fenêtre, il est possible de revenir à la page de recherche de voyages.
+\begin{center}
+\includegraphics[scale = 0.4]{../Conception_graphique/png_Pour_CR/Web-50-Devis.png}
+\newline
+Web - Devis
+\label{fig:Devis}
+\end{center} 
+
 \subsubsection{ICARs}
+Cette partie synthétise les ICARs de l'interface Web.
+\begin{center}
+\begin{footnotesize}
+\begin{supertabular}{|p{2cm}|p{3cm}|p{3.5cm}|p{2cm}|p{4cm}|}
+\hline 
+\bf{Fenêtre} & \bf{Intention} & \bf{Contrôle} & \bf{Action} & \bf{Réponse} \\ \hline
+Web – Accueil & Créer un compte & Bouton  \emph{Créer Votre Compte} & Click & Accès à la page Web – Création Compte \\ \hline
+ & Se connecter & Zone de texte puis bouton  \emph{Connexion} & Entrée clavier puis click & Accès à la page Web – Recherche Voyage \\ \hline
+Web – Création Compte & Créer un compte & Zones de texte puis bouton  \emph{Créer votre compte} & Entrées clavier puis click & Retour à la page Web -Accueil et création du compte – envoi mail \\ \hline
+Web – Recherche Voyage & Recherche par pays & Zone de texte puis bouton  \emph{Rechercher} & Entrée clavier puis click & Accès à la page Web – Résultats \\ \hline
+ & Recherche par type & ComboBox puis bouton  \emph{Rechercher} & Sélection puis click & Accès à la page Web – Résultats \\ \hline
+ & Se déconnecter & Bouton  \emph{Déconnexion} & Click & Retour à la page Web -Accueil \\ \hline
+Web – Résultats & Trier par Nom/Pays/Durée/Type & Liste des voyages – en tête & Click & Mise à jour de la liste des résultats \\ \hline
+ & Effectuer une nouvelle recherche & Bouton  \emph{Nouvelle Recherche} & Click & Accès à la page Web – Recherche Voyage \\ \hline
+ & Avoir des détails pour un voyage & Liste puis bouton \emph{Détails du voyage} & Sélection puis click & Accès à la page Web – Voyage \\ \hline
+Web – Voyage & Changer le nombre de participants & Stepper & Click & Mise à jour du total \\ \hline
+ & Établir un devis & Liste des options puis bouton  \emph{Établir un devis} & Sélection (option) puis click & Envoi mail (affichage écran) et création du devis \\ \hline
+ & Revenir à la liste & Bouton  \emph{Retour à la recherche} & Click & Page résultats \\ \hline
+Web – Devis &Revenir à la recherche de voyage & Bouton \emph{Retour au catalogue} & Click & Accès à la page Web – Recherche Voyage \\ \hline
+\end{supertabular}
+\end{footnotesize}
+\end{center}
 
 \section{Services}
 
