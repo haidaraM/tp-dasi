@@ -12,7 +12,6 @@ import javax.persistence.Query;
  */
 public class PaysDAO extends DAO<Pays>{
     
-    
     @Override
     public Pays find(long id) {
         Pays p = em.find(Pays.class, id);
@@ -54,7 +53,4 @@ public class PaysDAO extends DAO<Pays>{
         em.merge(obj);
         JpaUtil.validerTransaction();  
     }
-
-  
-    
 }

@@ -11,7 +11,6 @@ import javax.persistence.Query;
  */
 public class OptionsDAO extends DAO<Options> {
     
-    
     @Override
     public Options find(long id) {
         Options op = em.find(Options.class, id);
@@ -54,7 +53,5 @@ public class OptionsDAO extends DAO<Options> {
         JpaUtil.ouvrirTransaction();
         em.merge(updatedOption);
         JpaUtil.validerTransaction(); 
-    }
-
-  
+    }  
 }
