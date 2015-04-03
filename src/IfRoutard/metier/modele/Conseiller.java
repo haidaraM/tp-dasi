@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 /**
- * Représente un conseiller de l'agence de voyage
+ * <b> Représente un conseiller de l'agence de voyage. </b>
  * @author ebai
  */
 @Entity
@@ -21,8 +21,20 @@ public class Conseiller implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+    
+    /**
+     * Le nom du conseiller.
+     */
     private String nom;
+    
+    /**
+     * Le prénom du conseiller.
+     */
     private String prenom;
+    
+    /**
+     * L'adresse mail du conseiller.
+     */
     private String mail;
     
     @OneToMany(mappedBy = "conseiller")

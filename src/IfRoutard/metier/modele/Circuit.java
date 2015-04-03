@@ -13,16 +13,34 @@ import javax.persistence.Entity;
 @DiscriminatorValue("Circuit")
 public class Circuit extends Voyage{
     
+    /**
+     * Le type de transport sous lequel le voyage va s'effectuer.
+     */
     private String transport;
     
+    /**
+     * La distance du circuit.
+     */
     private int kilometrage;
 
+    /**
+     * Constructeur paramétrée.
+     * @param nom
+     * @param duree
+     * @param description
+     * @param code
+     * @param transport
+     * @param distance
+     */
     public Circuit(String nom, int duree, String description,String code, String transport, int distance) {
         super(nom, duree, description, code);
         this.transport = transport;
         this.kilometrage = distance;
     }
 
+    /**
+     * Constructeur sans paramètre.
+     */
     public Circuit() {
        super();
     }

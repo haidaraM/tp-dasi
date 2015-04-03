@@ -12,7 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.Temporal;
 
 /**
- * Représente une des options (départ, tarif) que le client peut choisir pour un voyage
+ * <b> Représente une des options (départ, tarif) que le client peut choisir pour un voyage. </b>
  * @author elmhaidara
  */
 @Entity

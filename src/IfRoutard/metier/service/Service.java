@@ -19,6 +19,7 @@ public class Service {
     
     /**
      * Recupere tous les voyages.
+     * @see Voyage
      * @return Liste de tous les voyages de la base
      */
     public static List<Voyage> listAllVoyages(){
@@ -33,6 +34,7 @@ public class Service {
     
     /**
      * Liste de tous les clients de la base.
+     * @see Client
      * @return 
      */
     public static List<Client> listClient(){
@@ -47,7 +49,9 @@ public class Service {
     
     /**
      * Recupere les voyages se passant dans le pays dont le nom est passé en paramètre
-     * @param pays, le pays que l'on souhaite rechercher parmis les voyages.
+     * @param pays le pays que l'on souhaite rechercher parmis les voyages.
+     * @see Pays
+     * @see Voyage
      * @return 
      */
     public static List<Voyage> listVoyagePays(String pays){
@@ -61,6 +65,7 @@ public class Service {
     }
     /**
      * Récupère les voyages de type séjour
+     * @see Sejour
      * @return les séjours sous la forme d'une liste
      */
     public static List<Voyage> listSejour(){
@@ -75,6 +80,7 @@ public class Service {
     
     /**
      * Récupère tous les voyages de type Circuit
+     * @see Circuit
      * @return les circuits sous la forme d'une liste
      */
     public static List<Voyage> listCircuit(){
@@ -90,6 +96,7 @@ public class Service {
     /**
      * Ajoute un client dans la base de donnée.
      * @param newClient 
+     * @see Client
      * @return Renvoie false si l'ajout s'est mal déroulée, true sinon
      */
     public static boolean ajouterNouveauClient(Client newClient){
@@ -120,6 +127,7 @@ public class Service {
     
     /**
      * Creer un devis pour un client.
+     * @see Devis
      * @param dev
      */
     public static void creerDevis(Devis dev){
@@ -134,6 +142,7 @@ public class Service {
     /**
      * Retourne l'id du voyage dont le nom est passée en paramètre.
      * @param id
+     * @see Voyage
      * @return 
      */
     public static Voyage voyageParId(int id){

@@ -16,7 +16,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
 /**
- * <b>Voyage est classe abstraite représentant un voyage proposé par l'agence de voyage </b>.
+ * <b>Voyage est la classe abstraite représentant un voyage proposé par l'agence de voyage. </b>
  * @author ebai
  */
 @Entity

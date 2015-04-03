@@ -15,7 +15,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 
 /**
- *
+ * <b> Devis est la classe permettant de gérer les devis. </b>  
  * @author elmhaidara
  */
 @Entity

@@ -11,7 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
 /**
- * Classe représentant les differents pays dans lesquels les voyages sont possibles
+ * <b> Classe représentant les differents pays dans lesquels les voyages sont possibles. </b>
  * @author elmhaidara
  */
 @Entity
