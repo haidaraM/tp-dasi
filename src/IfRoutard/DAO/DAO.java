@@ -4,13 +4,15 @@ import java.util.List;
 import javax.persistence.EntityManager;
 
 /**
- *
+ * Classe abstraite servant de base pour les differents DAO
  * @author ebai
  * @param <T>
  */
 public abstract class DAO<T> {
    
-        
+        /**
+         * Instance courante de l'Entity Manager
+         */
         protected EntityManager em = JpaUtil.obtenirEntityManager();
     
     	/**

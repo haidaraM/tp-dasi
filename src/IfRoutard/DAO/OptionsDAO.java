@@ -6,7 +6,7 @@ import java.util.List;
 import javax.persistence.Query;
 
 /**
- *
+ * <b> Classe DAO pour la gestion des options d'un voyage </b>
  * @author elmhaidara
  */
 public class OptionsDAO extends DAO<Options> {
@@ -20,15 +20,22 @@ public class OptionsDAO extends DAO<Options> {
        }      
        return op;
     }
-
+    
+    /**
+     * Retourne la liste de toutes les options présentes dans la base.
+     * <b> Cette méthode n'est pas encore implémentée </b>
+     * @return 
+     */
     @Override
     public List<Options> find() {
-        List<Options> maListe = new ArrayList<Options>();
-        Query q = em.createQuery("Select o FROM Options o"  );
-        maListe = (List<Options>) q.getResultList();
-        return maListe;
+        throw new UnsupportedOperationException("Not supported yet."); 
     }
 
+    /**
+     * Persiste une option dans la base de données.
+     * @param obj
+     * @return 
+     */
     @Override
     public boolean create(Options obj) {
         boolean succes;
@@ -44,14 +51,13 @@ public class OptionsDAO extends DAO<Options> {
         return succes;
     }
 
+    /**
+     * Met à jour une option dans la base de données.
+     * <b> Cette méthode n'est pas encore implémentée. </b>
+     * @param updatedOption  
+     */
     @Override
     public void update(Options updatedOption) {
-        if(em.find(Options.class, updatedOption.getId()) == null)
-        {
-            throw new IllegalArgumentException("Unknown option");
-        }
-        JpaUtil.ouvrirTransaction();
-        em.merge(updatedOption);
-        JpaUtil.validerTransaction(); 
+        throw new UnsupportedOperationException("Not supported yet."); 
     }  
 }
