@@ -53,11 +53,11 @@ public class ClientDAO extends DAO<Client> {
         boolean succes;
         JpaUtil.ouvrirTransaction();
         try{
-        em.persist(client);
-        succes = true;
+            em.persist(client);
+            succes = true;
         }
         catch(Exception e){
-        succes = false;
+            succes = false;
         }
         JpaUtil.validerTransaction();
         return succes;

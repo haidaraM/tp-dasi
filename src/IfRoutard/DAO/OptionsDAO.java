@@ -1,9 +1,7 @@
 package IfRoutard.DAO;
 
 import IfRoutard.metier.modele.Options;
-import java.util.ArrayList;
 import java.util.List;
-import javax.persistence.Query;
 
 /**
  * <b> Classe DAO pour la gestion des options d'un voyage </b>

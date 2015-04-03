@@ -59,6 +59,7 @@ public class DevisDAO extends DAO<Devis>{
         JpaUtil.validerTransaction();
         return succes;
     }
+    
     /**
      * Met à jour un devis dans la base de données. Lève une exception si le devis n'existe pas dans la base.
      * <b> Cette méthode n'est pas encore implémentée. </b>
